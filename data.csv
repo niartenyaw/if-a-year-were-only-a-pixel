@@ -1,13 +1,28 @@
 title,category,year,years_from_today,feet from start,miles from start,reference
+Albert Einstein publishes paper on general relativity,Science,1916,104.0,0.1,0.0,
+Charles Darwin publishes On The Origin of Species,Science,1859,161.0,0.1,0.0,
+United States of America declares independence,Government,1776,244.0,0.1,0.0,
+Issac Newton publishes Principia - lays the foundation of classical mechanics,Science,1687,333.0,0.2,0.0,
+William Shakespeare born,Arts,1564,456.0,0.2,0.0,
+Nicolaus Copernicus presents mathematical model for heliocentrism,Science,1543,477.0,0.2,0.0,https://en.wikipedia.org/wiki/Copernican_heliocentrism#Copernican_theory
+Martin Luther writes 95 Theses,Religion,1517,503.0,0.3,0.0,https://en.wikipedia.org/wiki/Ninety-five_Theses
 The Rennaissance starts in Florence,Age,1400,620.0,0.3,0.0,
 Black Death,Event,1347,673.0,0.4,0.0,https://en.wikipedia.org/wiki/Black_Death
+King John of England agrees to the Magna Carta,Government,1215,805.0,0.4,0.0,https://en.wikipedia.org/wiki/Magna_Carta
+Genghis Khan born,People,1162,858.0,0.4,0.0,
+Muhammed born,Religion,570,1450.0,0.8,0.0,
 Birth of Jesus Christ,Event,0,2020.0,1.1,0.0,
 Julius Caesar takes power,Event,-44,2064.0,1.1,0.0,
+Cleopatra born,People,-69,2089.0,1.1,0.0,https://en.wikipedia.org/wiki/Cleopatra
 Alexander The Great starts his reign,Event,-336,2356.0,1.2,0.0,
+Socrates born,People,-470,2490.0,1.3,0.0,
+Buddha born,Religion,-480,2500.0,1.3,0.0,https://en.wikipedia.org/wiki/Gautama_Buddha
+Confucius born,People,-551,2571.0,1.3,0.0,
 Iron Age starts in Sub-Saharan Africa,Tooling,-2500,4520.0,2.4,0.0,
 First writing - Cuneiform,Writing,-3100,5120.0,2.7,0.0,https://en.wikipedia.org/wiki/Cuneiform#History
 First Egyptian Dynasty,Dynasty,-3150,5170.0,2.7,0.0,
 Classic Bronze Age starts - Western Asia and the Near East ,Tooling,-3300,5320.0,2.8,0.0,
+Moment of creation - Judaism,Event,-3760,5780.0,3.0,0.0,
 First urban city with full-time bureaucracy: Uruk,Event,-4000,6020.0,3.1,0.0,https://en.wikipedia.org/wiki/Uruk
 Earliest evidence for proto-writing (visible marks communicating limited information),Writing,-7000,9020.0,4.7,0.0,
 Earliest signs of humans starting sedentary lifestyle,Lifestyle,"-12,000",14020.0,7.3,0.0,https://en.wikipedia.org/wiki/Cradle_of_civilization#Rise_of_civilization
@@ -41,6 +56,6 @@ Earliest evidence of dinosaurs,Life,"-243,000,000",243002020.0,126563.6,24.1,htt
 Earliest evidence of mammals,Ancestry,"-323,000,000",323002020.0,168230.2,32.0,https://en.wikipedia.org/wiki/Mammal#Origins
 Earliest evidence for multicellular organisms,Ancestry,"-600,000,000",600002020.0,312501.1,59.4,https://en.wikipedia.org/wiki/Multicellular_organism#Origin_hypotheses
 Great Oxidation Event - first significant amount of O2 in atmosphere due to cyanobacteria,Geological,"-2,400,000,000",2400002020.0,1250001.1,237.6,https://en.wikipedia.org/wiki/Great_Oxidation_Event
-Earliest known life forms,Ancestry,"-3,770,000,000",3770002020.0,1963542.7,373.3,https://en.wikipedia.org/wiki/Earliest_known_life_forms
+Earliest known life forms,Life,"-3,770,000,000",3770002020.0,1963542.7,373.3,https://en.wikipedia.org/wiki/Earliest_known_life_forms
 Oceans form on earth,Geological,"-4,280,000,000",4280002020.0,2229167.7,423.8,https://en.wikipedia.org/wiki/Origin_of_water_on_Earth#History_of_water_on_Earth
 Age of the Earth,Geological,"-4,540,000,000",4540002020.0,2364584.4,449.5,https://en.wikipedia.org/wiki/Age_of_the_Earth
