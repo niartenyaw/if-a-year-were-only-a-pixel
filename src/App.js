@@ -3,7 +3,8 @@ import './App.css';
 import DataPoint from './components/DataPoint';
 import Ruler from './components/Ruler';
 
-const numberOfYears = 9002020;
+const maxYear = 9002020;
+const offset = 500;
 
 class App extends React.Component {
   constructor() {
@@ -14,8 +15,12 @@ class App extends React.Component {
     };
   }
 
-  static get numberOfYears() {
-    return numberOfYears;
+  static get maxYear() {
+    return maxYear;
+  }
+
+  static get offset() {
+    return offset;
   }
 
   componentDidMount() {
@@ -26,21 +31,34 @@ class App extends React.Component {
       });
   }
   render() {
-    const numberOfYears = App.numberOfYears;
+    const maxYear = App.maxYear;
 
     const styles = {
-      height: `${numberOfYears}px`,
+      height: `${maxYear}px`,
+    };
+
+    const introStyles = {
+      height: `${App.offset}px`,
+    }
+
+    const historyStyles = {
+      position: "relative",
     };
 
     return (
       <div className="App" style={styles}>
-        <Ruler numberOfYears={numberOfYears}/>
-        <div className="data-points-container">
-          { this.state.data.map(point => (
-            <DataPoint
-              data={point}
-              numberOfYears={numberOfYears} />
-          )) }
+        <div className="intro" style={introStyles}>
+          Welcome to the site
+        </div>
+        <div className="history" style={historyStyles}>
+          <Ruler offset={App.offset} />
+          <div className="data-points-container">
+            { this.state.data.map(point => (
+              <DataPoint
+                data={point}
+                maxYear={maxYear} />
+            )) }
+          </div>
         </div>
       </div>
     );

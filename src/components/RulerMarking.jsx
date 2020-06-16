@@ -1,13 +1,13 @@
 import React from 'react';
 
-export default ({ markingLocation, yearNumber, yearsPerMarking }) => {
-  const lineThickness = 2;
+export default ({ markingLocation, yearsAgo, yearsPerMarking }) => {
+  const lineThickness = 1;
 
   let lineLength = 10;
-  if (yearNumber % 1000 === 0) {
+  if (yearsAgo % 1000 === 0) {
     lineLength = 50
   }
-  else if (yearNumber % 100 === 0) {
+  else if (yearsAgo % 100 === 0) {
     lineLength = 20;
   }
 
@@ -16,7 +16,7 @@ export default ({ markingLocation, yearNumber, yearsPerMarking }) => {
     width: `${lineLength}px`,
     "background-color": "red",
     position: "absolute",
-    top: yearNumber
+    top: yearsAgo
   };
 
   return (

@@ -1,6 +1,8 @@
 import React from 'react';
 import RulerMarking from './RulerMarking';
 
+const yearsPerMarking = 10;
+
 class Ruler extends React.Component {
   constructor() {
     super();
@@ -21,22 +23,29 @@ class Ruler extends React.Component {
   }
 
   handleScroll() {
-    this.setState({ scrollLocation: window.scrollY });
+    this.setState({ scrollLocation: window.scrollY - this.props.offset });
+  }
+
+  uppermostMarkerPosition() {
+    return Math.round((this.state.scrollLocation - window.innerHeight) / yearsPerMarking) * yearsPerMarking;
+  }
+
+  static get yearsPerMarking() {
+    return yearsPerMarking;
   }
 
   render() {
-    const yearsPerMarking = 10;
+    const firstMarkingLocation = Math.max(this.uppermostMarkerPosition(), this.props.offset);
 
-    const firstMarkingLocation = Math.round(this.state.scrollLocation / yearsPerMarking) * yearsPerMarking;
-
-    const numberOfMarkings = (firstMarkingLocation + window.innerHeight + yearsPerMarking) / yearsPerMarking;
+    const numberOfMarkings = (3 * window.innerHeight) / yearsPerMarking;
 
     const markings = [];
 
     for (let i = 0; i < numberOfMarkings; i++) {
-      const yearNumber = Math.round(firstMarkingLocation + i * yearsPerMarking);
+      const yearsAgo = Math.round(firstMarkingLocation + i * yearsPerMarking - this.props.offset);
+      const yearNumber = yearsAgo - 2020;
       markings.push(
-        <RulerMarking key={yearNumber} yearNumber={yearNumber} yearsPerMarking={yearsPerMarking} />
+        <RulerMarking key={yearNumber} yearsAgo={yearsAgo} yearsPerMarking={yearsPerMarking} />
       );
     }
 

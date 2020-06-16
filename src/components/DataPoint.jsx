@@ -6,7 +6,8 @@ export default ({ data, numberOfYears }) => {
   }
   const style = {
     position: "absolute",
-    top: `${data.years_from_today}px`
+    top: `${data.years_from_today}px`,
+    left: `50px`,
   };
   return (
     <div className="datapoint" style={style}>
