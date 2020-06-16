@@ -27,31 +27,55 @@ class Ruler extends React.Component {
   }
 
   uppermostMarkerPosition() {
-    return Math.round((this.state.scrollLocation - window.innerHeight) / yearsPerMarking) * yearsPerMarking;
+    return Math.round((this.state.scrollLocation - window.innerHeight) / Ruler.yearsPerMarking) * Ruler.yearsPerMarking;
+  }
+
+  firstMarkingLocation() {
+    return Math.max(this.uppermostMarkerPosition(), this.startOfHistory());
+  }
+
+  lowermostMarkerPosition() {
+    return this.firstMarkingLocation() + (3 * window.innerHeight);
   }
 
   static get yearsPerMarking() {
     return yearsPerMarking;
   }
 
-  render() {
-    const firstMarkingLocation = Math.max(this.uppermostMarkerPosition(), this.props.offset);
+  startOfHistory() {
+    return this.props.offset;
+  }
 
-    const numberOfMarkings = (3 * window.innerHeight) / yearsPerMarking;
+  endOfHistory() {
+    return this.startOfHistory() + this.props.maxYear;
+  }
 
+  numberOfMarkings() {
+    return Math.min(this.lowermostMarkerPosition(), this.endOfHistory()) / Ruler.yearsPerMarking;
+  }
+
+  yearsAgo(i) {
+    return Math.round(this.firstMarkingLocation() + i * Ruler.yearsPerMarking - this.props.offset);
+  }
+
+  markings() {
     const markings = [];
 
-    for (let i = 0; i < numberOfMarkings; i++) {
-      const yearsAgo = Math.round(firstMarkingLocation + i * yearsPerMarking - this.props.offset);
-      const yearNumber = yearsAgo - 2020;
+    for (let i = 0; i < this.numberOfMarkings(); i++) {
+      const yearsAgo = this.yearsAgo(i);
       markings.push(
-        <RulerMarking key={yearNumber} yearsAgo={yearsAgo} yearsPerMarking={yearsPerMarking} />
+        <RulerMarking key={yearsAgo} yearsAgo={yearsAgo} />
       );
     }
 
+    return markings;
+  }
+
+  render() {
+    console.log(this.firstMarkingLocation(), this.numberOfMarkings())
     return (
       <div className="ruler" >
-        { markings }
+        { this.markings() }
       </div>
     );
   }

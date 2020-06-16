@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ markingLocation, yearsAgo, yearsPerMarking }) => {
+export default ({ markingLocation, yearsAgo}) => {
   const lineThickness = 1;
 
   let lineLength = 10;

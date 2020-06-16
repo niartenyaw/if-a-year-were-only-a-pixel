@@ -35,10 +35,13 @@ class App extends React.Component {
 
     const styles = {
       height: `${maxYear}px`,
+      color: "white",
+      "background-color": "black"
     };
 
     const introStyles = {
       height: `${App.offset}px`,
+      "background-color": "gray"
     }
 
     const historyStyles = {
@@ -51,8 +54,8 @@ class App extends React.Component {
           Welcome to the site
         </div>
         <div className="history" style={historyStyles}>
-          <Ruler offset={App.offset} />
-          <div className="data-points-container">
+          <Ruler offset={App.offset} maxYear={maxYear} />
+          <div className="datapoints">
             { this.state.data.map(point => (
               <DataPoint
                 data={point}
