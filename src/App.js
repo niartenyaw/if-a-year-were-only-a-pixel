@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
-import Marker from './components/Marker';
+import DataPoint from './components/DataPoint';
 import Ruler from './components/Ruler';
+
+const numberOfYears = 9002020;
 
 class App extends React.Component {
   constructor() {
@@ -11,6 +13,11 @@ class App extends React.Component {
       data: [],
     };
   }
+
+  static get numberOfYears() {
+    return numberOfYears;
+  }
+
   componentDidMount() {
     fetch('data.json')
       .then(response => response.json())
@@ -19,10 +26,22 @@ class App extends React.Component {
       });
   }
   render() {
+    const numberOfYears = App.numberOfYears;
+
+    const styles = {
+      height: `${numberOfYears}px`,
+    };
+
     return (
-      <div className="App">
-        <Ruler />
-        { this.state.data.map(point => <Marker data={point} />) }
+      <div className="App" style={styles}>
+        <Ruler numberOfYears={numberOfYears}/>
+        <div className="data-points-container">
+          { this.state.data.map(point => (
+            <DataPoint
+              data={point}
+              numberOfYears={numberOfYears} />
+          )) }
+        </div>
       </div>
     );
   }
