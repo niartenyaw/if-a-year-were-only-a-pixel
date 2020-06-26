@@ -34,6 +34,10 @@ class Ruler extends React.Component {
     return Math.max(this.uppermostMarkerPosition(), this.startOfHistory());
   }
 
+  lastMarkingLocation() {
+    return Math.min(this.lowermostMarkerPosition(), this.endOfHistory());
+  }
+
   lowermostMarkerPosition() {
     return this.firstMarkingLocation() + (3 * window.innerHeight);
   }
@@ -51,7 +55,7 @@ class Ruler extends React.Component {
   }
 
   numberOfMarkings() {
-    return Math.min(this.lowermostMarkerPosition(), this.endOfHistory()) / Ruler.yearsPerMarking;
+    return (this.lastMarkingLocation() - this.firstMarkingLocation()) / Ruler.yearsPerMarking;
   }
 
   yearsAgo(i) {
@@ -72,7 +76,6 @@ class Ruler extends React.Component {
   }
 
   render() {
-    console.log(this.firstMarkingLocation(), this.numberOfMarkings())
     return (
       <div className="ruler" >
         { this.markings() }
