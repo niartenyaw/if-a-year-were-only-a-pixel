@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('data.json')
+    fetch(`${window.location}/data.json`)
       .then(response => response.json())
       .then(data => {
         this.setState({ data })

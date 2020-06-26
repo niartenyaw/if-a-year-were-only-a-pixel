@@ -7,7 +7,7 @@ const DataPoint = ({ data, maxYear }) => {
 
   const style = {
     position: "absolute",
-    top: `${data.years_from_today}px`,
+    top: `${data.years_from_today_augmented}px`,
     left: `50px`,
   };
 
