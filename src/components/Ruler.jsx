@@ -79,15 +79,18 @@ class Ruler extends React.Component {
     const markingStyles = {
       marginLeft: "200px",
       height: "100%",
+      width: "250px",
+      position: "relative",
     };
 
     const rulerStyles = {
       width: "250px",
       height: "100%",
+      display: "flex",
     };
 
     const counterContainerStyles = {
-      width: "200px",
+      width: "0",
       height: "100%",
     };
 

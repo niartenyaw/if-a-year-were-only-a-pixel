@@ -12,7 +12,8 @@ const Counter = (props) => {
     transform: "translateY(-50%)",
     display: "flex",
     justifyContent: "flex-end",
-    alignItems: "center"
+    alignItems: "center",
+    width: "200px",
   };
 
   const formattedYear = year.toLocaleString(undefined, { minimumFrationDigits: 0 })
