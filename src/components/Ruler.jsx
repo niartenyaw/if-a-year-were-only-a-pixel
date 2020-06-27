@@ -9,8 +9,8 @@ class Ruler extends React.Component {
     super();
 
     this.state = {
-      scrollLocation: 0,
-    }
+      scrollLocation: window.innerHeight * -1, // make sure middleYear is negative at mount
+    };
 
     this.handleScroll = this.handleScroll.bind(this);
   }

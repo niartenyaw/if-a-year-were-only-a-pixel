@@ -3,6 +3,7 @@ import Arrow from './Arrow';
 
 const Counter = (props) => {
   let { year } = props;
+  console.log(year)
   if (year < 0) return null;
   if (year === 0) year += 0; // stupid negative zero
 

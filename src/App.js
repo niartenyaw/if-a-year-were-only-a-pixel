@@ -41,15 +41,17 @@ class App extends React.Component {
 
     const introStyles = {
       height: `${App.offset}px`,
+      position: "relative",
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between"
     };
 
     const headerStyles = {
-      paddingTop: "40px",
-      paddingLeft: "10px",
-      paddingBottom: "5px"
+      position: "absolute",
+      top: "30%",
+      transform: "translateX(-50%)",
+      left: "50%",
     };
 
     const historyStyles = {
@@ -59,7 +61,11 @@ class App extends React.Component {
     };
 
     const footerStyle = {
-      textAlign: "left"
+      textAlign: "center",
+      position: "absolute",
+      top: "90%",
+      transform: "translateX(-50%)",
+      left: "50%",
     }
 
     const datapointsStyles = {
@@ -67,6 +73,18 @@ class App extends React.Component {
       width: "100%",
       position: "relative",
     }
+
+    const sectionStyle = {
+      textAlign: "center",
+      position: "absolute",
+      top: "60%",
+      transform: "translateX(-50%)",
+      left: "50%",
+    };
+
+    const pStyle = {
+      margin: "0 0"
+    };
 
     return (
       <div className="App" style={styles}>
@@ -79,12 +97,23 @@ class App extends React.Component {
               a showcase of time.
             </p>
           </header>
+          <section style={sectionStyle}>
+            <p>
+              scroll down to explore
+            </p>
+          </section>
           <footer style={footerStyle}>
             <p>
-              this first long red line is the year 2020.
+              this first long red line is the year 2020
             </p>
-            <p>
-              every small mark is 10 years apart, the bigger ones are 100 years apart, and the largest are 1000 years apart.
+            <p style={pStyle}>
+              every small mark is 10 years apart
+            </p>
+            <p style={pStyle}>
+              the bigger ones are 100 years apart
+            </p>
+            <p style={pStyle}>
+              the largest are 1000 years apart
             </p>
           </footer>
         </div>
