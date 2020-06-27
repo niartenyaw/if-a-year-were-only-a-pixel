@@ -1,5 +1,6 @@
 import React from 'react';
 import RulerMarking from './RulerMarking';
+import Counter from './Counter';
 
 const yearsPerMarking = 10;
 
@@ -31,7 +32,7 @@ class Ruler extends React.Component {
   }
 
   firstMarkingLocation() {
-    return Math.max(this.uppermostMarkerPosition(), this.startOfHistory());
+    return Math.max(this.uppermostMarkerPosition(), 0);
   }
 
   lastMarkingLocation() {
@@ -46,12 +47,8 @@ class Ruler extends React.Component {
     return yearsPerMarking;
   }
 
-  startOfHistory() {
-    return this.props.offset;
-  }
-
   endOfHistory() {
-    return this.startOfHistory() + this.props.maxYear;
+    return this.props.maxYear;
   }
 
   numberOfMarkings() {
@@ -59,12 +56,11 @@ class Ruler extends React.Component {
   }
 
   yearsAgo(i) {
-    return Math.round(this.firstMarkingLocation() + i * Ruler.yearsPerMarking - this.props.offset);
+    return Math.round(this.firstMarkingLocation() + i * Ruler.yearsPerMarking);
   }
 
   markings() {
     const markings = [];
-
     for (let i = 0; i < this.numberOfMarkings(); i++) {
       const yearsAgo = this.yearsAgo(i);
       markings.push(
@@ -75,10 +71,34 @@ class Ruler extends React.Component {
     return markings;
   }
 
+  middleYear() {
+    return Math.round(this.state.scrollLocation + (window.innerHeight / 2));
+  }
+
   render() {
+    const markingStyles = {
+      marginLeft: "200px",
+      height: "100%",
+    };
+
+    const rulerStyles = {
+      width: "250px",
+      height: "100%",
+    };
+
+    const counterContainerStyles = {
+      width: "200px",
+      height: "100%",
+    };
+
     return (
-      <div className="ruler" >
-        { this.markings() }
+      <div className="ruler" style={rulerStyles}>
+        <div className="counter-container" style={counterContainerStyles}>
+          <Counter year={this.middleYear()} />
+        </div>
+        <div className="markings" style={markingStyles}>
+          { this.markings() }
+        </div>
       </div>
     );
   }

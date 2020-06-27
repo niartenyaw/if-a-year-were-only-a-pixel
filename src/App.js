@@ -4,7 +4,7 @@ import DataPoint from './components/DataPoint';
 import Ruler from './components/Ruler';
 
 const maxYear = 9003020;
-const offset = 300;
+const offset = window.innerHeight;
 
 class App extends React.Component {
   constructor() {
@@ -43,24 +43,33 @@ class App extends React.Component {
       height: `${App.offset}px`,
       display: "flex",
       flexDirection: "column",
-      justifyContent: "space-between",
+      justifyContent: "space-between"
+    };
+
+    const headerStyles = {
       paddingTop: "40px",
       paddingLeft: "10px",
       paddingBottom: "5px"
-    }
+    };
 
     const historyStyles = {
       position: "relative",
+      height: "100%",
+      display: "flex"
     };
 
     const footerStyle = {
       textAlign: "left"
     }
 
+    const datapointsStyles = {
+      height: "100%",
+    }
+
     return (
       <div className="App" style={styles}>
         <div className="intro" style={introStyles}>
-          <header>
+          <header style={headerStyles}>
             <h1>
               if a year were only a pixel.
             </h1>
@@ -79,7 +88,7 @@ class App extends React.Component {
         </div>
         <div className="history" style={historyStyles}>
           <Ruler offset={App.offset} maxYear={maxYear} />
-          <div className="datapoints">
+          <div className="datapoints" style={datapointsStyles}>
             { this.state.data.map(point => (
               <DataPoint
                 data={point}
