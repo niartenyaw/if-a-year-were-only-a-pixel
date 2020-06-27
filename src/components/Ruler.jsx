@@ -77,14 +77,13 @@ class Ruler extends React.Component {
 
   render() {
     const markingStyles = {
-      marginLeft: "200px",
       height: "100%",
-      width: "250px",
+      width: "150px",
       position: "relative",
     };
 
     const rulerStyles = {
-      width: "250px",
+      width: "150px",
       height: "100%",
       display: "flex",
     };

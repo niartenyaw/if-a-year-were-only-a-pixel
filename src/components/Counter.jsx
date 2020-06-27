@@ -14,7 +14,7 @@ const Counter = (props) => {
     display: "flex",
     justifyContent: "flex-end",
     alignItems: "center",
-    width: "200px",
+    width: "140px",
   };
 
   const formattedYear = year.toLocaleString(undefined, { minimumFrationDigits: 0 })
@@ -22,7 +22,12 @@ const Counter = (props) => {
   return (
     <div style={style}>
       <div>
-        { formattedYear } years ago
+        <div>
+          { formattedYear }
+        </div>
+        <div>
+          years ago
+        </div>
       </div>
       <Arrow />
     </div>

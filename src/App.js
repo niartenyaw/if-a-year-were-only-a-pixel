@@ -41,18 +41,26 @@ class App extends React.Component {
 
     const introStyles = {
       height: `${App.offset}px`,
-      position: "relative",
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between"
     };
 
     const headerStyles = {
-      position: "absolute",
-      top: "30%",
-      transform: "translateX(-50%)",
-      left: "50%",
+      marginTop: "30%",
+      padding: "0 50px"
     };
+
+    const sectionStyle = {
+    };
+
+    const pStyle = {
+      margin: "0 0",
+    };
+
+    const footerStyle = {
+      marginBottom: "30px",
+    }
 
     const historyStyles = {
       position: "relative",
@@ -60,31 +68,11 @@ class App extends React.Component {
       display: "flex"
     };
 
-    const footerStyle = {
-      textAlign: "center",
-      position: "absolute",
-      top: "90%",
-      transform: "translateX(-50%)",
-      left: "50%",
-    }
-
     const datapointsStyles = {
       height: "100%",
       width: "100%",
       position: "relative",
     }
-
-    const sectionStyle = {
-      textAlign: "center",
-      position: "absolute",
-      top: "60%",
-      transform: "translateX(-50%)",
-      left: "50%",
-    };
-
-    const pStyle = {
-      margin: "0 0"
-    };
 
     return (
       <div className="App" style={styles}>
