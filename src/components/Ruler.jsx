@@ -5,30 +5,8 @@ import Counter from './Counter';
 const yearsPerMarking = 10;
 
 class Ruler extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      scrollLocation: window.innerWidth * -1, // make sure middleYear is negative at mount
-    };
-
-    this.handleScroll = this.handleScroll.bind(this);
-  }
-
-  componentDidMount() {
-    document.addEventListener("scroll", this.handleScroll)
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener("scroll", this.handleScroll)
-  }
-
-  handleScroll() {
-    this.setState({ scrollLocation: window.scrollX - this.props.offset });
-  }
-
   uppermostMarkerPosition() {
-    return Math.round((this.state.scrollLocation - window.innerWidth) / Ruler.yearsPerMarking) * Ruler.yearsPerMarking;
+    return Math.round((this.props.scrollLocation - window.innerWidth) / Ruler.yearsPerMarking) * Ruler.yearsPerMarking;
   }
 
   firstMarkingLocation() {
@@ -72,7 +50,7 @@ class Ruler extends React.Component {
   }
 
   middleYear() {
-    return Math.round(this.state.scrollLocation + (window.innerWidth / 2));
+    return Math.round(this.props.scrollLocation + (window.innerWidth / 2));
   }
 
   render() {

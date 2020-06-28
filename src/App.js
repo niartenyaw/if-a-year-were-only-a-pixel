@@ -1,4 +1,6 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import './App.css';
 import DataPoint from './components/DataPoint';
 import Ruler from './components/Ruler';
@@ -6,15 +8,29 @@ import Ruler from './components/Ruler';
 const maxYear = 9003020;
 const offset = window.innerWidth;
 
+const AppContainer = styled.div`
+  width: ${props => props.maxYear}px;
+  height: 100vh;
+  color: white;
+  background-color: black;
+  width: 100vw;
+  overflow: scroll;
+`;
+
+const Scrollable = styled.div`
+  display: flex;
+  width: ${() => maxYear}px;
+`;
+
+const Intro = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 class App extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      data: [],
-    };
-  }
-
   static get maxYear() {
     return maxYear;
   }
@@ -23,7 +39,21 @@ class App extends React.Component {
     return offset;
   }
 
+  constructor() {
+    super();
+
+    this.state = {
+      data: [],
+      scrollLocation: window.innerWidth * -1, // make sure middleYear is negative at mount
+    };
+
+    this.app = React.createRef();
+
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
   componentDidMount() {
+    this.app.current.addEventListener("scroll", this.handleScroll)
     fetch(`${window.location}/data.json`)
       .then(response => response.json())
       .then(data => {
@@ -31,24 +61,16 @@ class App extends React.Component {
       });
   }
 
+  componentWillUnmount() {
+    this.app.current.removeEventListener("scroll", this.handleScroll)
+  }
+
+  handleScroll(e) {
+    this.setState({ scrollLocation: e.target.scrollLeft - App.offset });
+  }
+
   render() {
     const maxYear = App.maxYear;
-
-    const styles = {
-      display: "flex",
-      width: `${maxYear}px`,
-      height: "100vh",
-      color: "white",
-      "background-color": "black"
-    };
-
-    const introStyles = {
-      height: "100vh",
-      width: `${App.offset}px`,
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between"
-    };
 
     const headerStyles = {
       marginTop: "30%",
@@ -80,47 +102,52 @@ class App extends React.Component {
     }
 
     return (
-      <div className="App" style={styles}>
-        <div className="intro" style={introStyles}>
-          <header style={headerStyles}>
-            <h1>
-              if a year were only a pixel.
-            </h1>
-            <p>
-              a showcase of time.
-            </p>
-          </header>
-          <section style={sectionStyle}>
-            <p>
-              scroll right to explore
-            </p>
-          </section>
-          <footer style={footerStyle}>
-            <p>
-              this first long red line is the year 2020
-            </p>
-            <p style={pStyle}>
-              every small mark is 10 years apart
-            </p>
-            <p style={pStyle}>
-              the bigger ones are 100 years apart
-            </p>
-            <p style={pStyle}>
-              the largest are 1000 years apart
-            </p>
-          </footer>
-        </div>
-        <div className="history" style={historyStyles}>
-          <Ruler offset={App.offset} maxYear={maxYear} />
-          <div className="datapoints" style={datapointsStyles}>
-            { this.state.data.map(point => (
-              <DataPoint
-                data={point}
-                maxYear={maxYear} />
-            )) }
+      <AppContainer ref={this.app} className="App" maxYear={maxYear}>
+        <Scrollable>
+          <Intro className="intro">
+            <header style={headerStyles}>
+              <h1>
+                if a year were only a pixel.
+              </h1>
+              <p>
+                a showcase of time.
+              </p>
+            </header>
+            <section style={sectionStyle}>
+              <p>
+                scroll right to explore
+              </p>
+            </section>
+            <footer style={footerStyle}>
+              <p>
+                this first long red line is the year 2020
+              </p>
+              <p style={pStyle}>
+                every small mark is 10 years apart
+              </p>
+              <p style={pStyle}>
+                the bigger ones are 100 years apart
+              </p>
+              <p style={pStyle}>
+                the largest are 1000 years apart
+              </p>
+            </footer>
+          </Intro>
+          <div className="history" style={historyStyles}>
+            <Ruler
+              scrollLocation={this.state.scrollLocation}
+              offset={App.offset}
+              maxYear={maxYear} />
+            <div className="datapoints" style={datapointsStyles}>
+              { this.state.data.map(point => (
+                <DataPoint
+                  data={point}
+                  maxYear={maxYear} />
+              )) }
+            </div>
           </div>
-        </div>
-      </div>
+      </Scrollable>
+      </AppContainer>
     );
   }
 }
