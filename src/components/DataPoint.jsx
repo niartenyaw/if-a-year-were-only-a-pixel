@@ -4,7 +4,10 @@ import Arrow from './Arrow';
 import styled from 'styled-components';
 
 const TitleContainer = styled.div`
-  transform: translateX(-50%)rotate(-90deg) translateX(50%);
+  transform: translateX(-10px);
+  writing-mode: sideways-lr;
+  flex-grow: 1;
+  text-align: start;
 `;
 
 const Point = styled.div`

@@ -30,6 +30,7 @@ class App extends React.Component {
         this.setState({ data })
       });
   }
+
   render() {
     const maxYear = App.maxYear;
 
