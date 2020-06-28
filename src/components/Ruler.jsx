@@ -9,7 +9,7 @@ class Ruler extends React.Component {
     super();
 
     this.state = {
-      scrollLocation: window.innerHeight * -1, // make sure middleYear is negative at mount
+      scrollLocation: window.innerWidth * -1, // make sure middleYear is negative at mount
     };
 
     this.handleScroll = this.handleScroll.bind(this);
@@ -24,11 +24,11 @@ class Ruler extends React.Component {
   }
 
   handleScroll() {
-    this.setState({ scrollLocation: window.scrollY - this.props.offset });
+    this.setState({ scrollLocation: window.scrollX - this.props.offset });
   }
 
   uppermostMarkerPosition() {
-    return Math.round((this.state.scrollLocation - window.innerHeight) / Ruler.yearsPerMarking) * Ruler.yearsPerMarking;
+    return Math.round((this.state.scrollLocation - window.innerWidth) / Ruler.yearsPerMarking) * Ruler.yearsPerMarking;
   }
 
   firstMarkingLocation() {
@@ -40,7 +40,7 @@ class Ruler extends React.Component {
   }
 
   lowermostMarkerPosition() {
-    return this.firstMarkingLocation() + (3 * window.innerHeight);
+    return this.firstMarkingLocation() + (3 * window.innerWidth);
   }
 
   static get yearsPerMarking() {
@@ -72,25 +72,26 @@ class Ruler extends React.Component {
   }
 
   middleYear() {
-    return Math.round(this.state.scrollLocation + (window.innerHeight / 2));
+    return Math.round(this.state.scrollLocation + (window.innerWidth / 2));
   }
 
   render() {
     const markingStyles = {
-      height: "100%",
-      width: "150px",
+      width: "100%",
+      height: "150px",
       position: "relative",
     };
 
     const rulerStyles = {
-      width: "150px",
-      height: "100%",
+      height: "150px",
+      width: "100%",
       display: "flex",
+      flexDirection: "column"
     };
 
     const counterContainerStyles = {
-      width: "0",
-      height: "100%",
+      height: "0",
+      width: "100%",
     };
 
     return (

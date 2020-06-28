@@ -4,7 +4,7 @@ import DataPoint from './components/DataPoint';
 import Ruler from './components/Ruler';
 
 const maxYear = 9003020;
-const offset = window.innerHeight;
+const offset = window.innerWidth;
 
 class App extends React.Component {
   constructor() {
@@ -34,13 +34,16 @@ class App extends React.Component {
     const maxYear = App.maxYear;
 
     const styles = {
-      height: `${maxYear}px`,
+      display: "flex",
+      width: `${maxYear}px`,
+      height: "100vh",
       color: "white",
       "background-color": "black"
     };
 
     const introStyles = {
-      height: `${App.offset}px`,
+      height: "100vh",
+      width: `${App.offset}px`,
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between"
@@ -64,8 +67,9 @@ class App extends React.Component {
 
     const historyStyles = {
       position: "relative",
-      height: "100%",
-      display: "flex"
+      width: "100%",
+      display: "flex",
+      flexDirection: "column-reverse"
     };
 
     const datapointsStyles = {
@@ -87,7 +91,7 @@ class App extends React.Component {
           </header>
           <section style={sectionStyle}>
             <p>
-              scroll down to explore
+              scroll right to explore
             </p>
           </section>
           <footer style={footerStyle}>

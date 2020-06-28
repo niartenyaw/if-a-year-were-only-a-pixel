@@ -8,10 +8,12 @@ const Counter = (props) => {
   if (year === 0) year += 0; // stupid negative zero
 
   const style = {
-    position: "sticky",
-    top: `${window.innerHeight / 2}px`,
-    transform: "translateY(-50%)",
+    position: "fixed",
+    left: `${window.innerWidth / 2}px`,
+    bottom: "20px",
+    transform: "translateX(-50%)",
     display: "flex",
+    flexDirection: "column-reverse",
     justifyContent: "flex-end",
     alignItems: "center",
     width: "140px",
@@ -29,7 +31,7 @@ const Counter = (props) => {
           years ago
         </div>
       </div>
-      <Arrow />
+      <Arrow type="vertical"/>
     </div>
   );
 };

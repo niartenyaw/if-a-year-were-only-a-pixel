@@ -12,12 +12,12 @@ export default ({ markingLocation, yearsAgo}) => {
   }
 
   const styles = {
-    height: `${lineThickness}px`,
-    width: `${lineLength}px`,
+    width: `${lineThickness}px`,
+    height: `${lineLength}px`,
     backgroundColor: "red",
     position: "absolute",
-    top: yearsAgo,
-    right: "0",
+    left: yearsAgo,
+    top: "0",
   };
 
   return (
