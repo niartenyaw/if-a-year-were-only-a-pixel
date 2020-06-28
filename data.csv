@@ -1,61 +1,66 @@
-title,category,year,years_from_today,years_from_today_augmented,feet from start,miles from start,reference
-Albert Einstein publishes paper on general relativity,Science,1916,104.0,104.0,0.1,0.0,
-Charles Darwin publishes On The Origin of Species,Science,1859,161.0,161.0,0.1,0.0,
-United States of America declares independence,Government,1776,244.0,244.0,0.1,0.0,
-Issac Newton publishes Principia - lays the foundation of classical mechanics,Science,1687,333.0,333.0,0.2,0.0,
-William Shakespeare born,Arts,1564,456.0,456.0,0.2,0.0,
-Nicolaus Copernicus presents mathematical model for heliocentrism,Science,1543,477.0,477.0,0.2,0.0,https://en.wikipedia.org/wiki/Copernican_heliocentrism#Copernican_theory
-Martin Luther writes 95 Theses,Religion,1517,503.0,503.0,0.3,0.0,https://en.wikipedia.org/wiki/Ninety-five_Theses
-The Rennaissance starts in Florence,Age,1400,620.0,620.0,0.3,0.0,
-Black Death,Event,1347,673.0,673.0,0.4,0.0,https://en.wikipedia.org/wiki/Black_Death
-King John of England agrees to the Magna Carta,Government,1215,805.0,805.0,0.4,0.0,https://en.wikipedia.org/wiki/Magna_Carta
-Genghis Khan born,People,1162,858.0,858.0,0.4,0.0,
-Muhammed born,Religion,570,1450.0,1450.0,0.8,0.0,
-Birth of Jesus Christ,Event,0,2020.0,2020.0,1.1,0.0,
-Julius Caesar takes power,Event,-44,2064.0,2064.0,1.1,0.0,
-Cleopatra born,People,-69,2089.0,2089.0,1.1,0.0,https://en.wikipedia.org/wiki/Cleopatra
-Alexander The Great starts his reign,Event,-336,2356.0,2356.0,1.2,0.0,
-Socrates born,People,-470,2490.0,2480.0,1.3,0.0,
-Buddha born,Religion,-480,2500.0,2500.0,1.3,0.0,https://en.wikipedia.org/wiki/Gautama_Buddha
-Confucius born,People,-551,2571.0,2571.0,1.3,0.0,
-Iron Age starts in Sub-Saharan Africa,Tooling,-2500,4520.0,4520.0,2.4,0.0,
-First writing - Cuneiform,Writing,-3100,5120.0,5120.0,2.7,0.0,https://en.wikipedia.org/wiki/Cuneiform#History
-First Egyptian Dynasty,Dynasty,-3150,5170.0,5170.0,2.7,0.0,
-Classic Bronze Age starts - Western Asia and the Near East ,Tooling,-3300,5320.0,5320.0,2.8,0.0,
-Moment of creation - Judaism,Event,-3760,5780.0,5780.0,3.0,0.0,
-First urban city with full-time bureaucracy: Uruk,Event,-4000,6020.0,6020.0,3.1,0.0,https://en.wikipedia.org/wiki/Uruk
-Earliest evidence for proto-writing (visible marks communicating limited information),Writing,-7000,9020.0,9020.0,4.7,0.0,
-Earliest signs of humans starting sedentary lifestyle,Lifestyle,"-12,000",14020.0,14010.0,7.3,0.0,https://en.wikipedia.org/wiki/Cradle_of_civilization#Rise_of_civilization
-Homo sapiens in North America,Migration,"-12,000",14020.0,14030.0,7.3,0.0,
-Homo sapiens cross the Bering Strait,Migration,"-15,000",17020.0,17020.0,8.9,0.0,
-Earliest pottery - China,Tooling,"-18,000",20020.0,20020.0,10.4,0.0,https://en.wikipedia.org/wiki/Chinese_ceramics#Early_wares
-Homo sapiens in Northern Asia,Migration,"-25,000",27020.0,27020.0,14.1,0.0,
-Earliest evidence of counting (tally marks),Writing,"-30,000",32020.0,32010.0,16.7,0.0,https://en.wikipedia.org/wiki/Prehistoric_numerals#Background
-Homo sapiens in Sound Pacific,Migration,"-30,000",32020.0,32030.0,16.7,0.0,
-First symbols in ice age European cave paintings ,Writing,"-40,000",42020.0,42010.0,21.9,0.0,https://en.wikipedia.org/wiki/Proto-writing#Neolithic_Europe
-Wave 2 Homo sapiens in Europe,Migration,"-40,000",42020.0,42030.0,21.9,0.0,
-Wave 2 Homo sapiens in Australia,Migration,"-50,000",52020.0,52020.0,27.1,0.0,
-Wave 2 Homo sapiens in India and South Asia,Migration,"-70,000",72020.0,72020.0,37.5,0.0,
-Wave 2 Homo sapiens in the Levant (Middle East),Migration,"-100,000",102020.0,102020.0,53.1,0.0,
-Earliest evidence for use of clothing,Lifestyle,"-170,000",172020.0,172020.0,89.6,0.0,https://en.wikipedia.org/wiki/Clothing#Origin_of_clothing
-First evidence for cooking food,Lifestyle,"-1,000,000",1002020.0,1002020.0,521.9,0.1,https://en.wikipedia.org/wiki/Cooking#History
-Homo erectus in Europe (Spain),Migration,"-1,400,000",1402020.0,1402020.0,730.2,0.1,https://en.wikipedia.org/wiki/Early_expansions_of_hominins_out_of_Africa#Homo_erectus
-Homo erectus in Indonesia,Migration,"-1,660,000",1662020.0,1662020.0,865.6,0.2,https://en.wikipedia.org/wiki/Early_expansions_of_hominins_out_of_Africa#Homo_erectus
-Homo erectus in China,Migration,"-1,700,000",1702020.0,1702020.0,886.5,0.2,https://en.wikipedia.org/wiki/Early_expansions_of_hominins_out_of_Africa#Homo_erectus
-Earliest evidence for fire control,Tooling,"-1,800,000",1802020.0,1801920.0,938.6,0.2,https://en.wikipedia.org/wiki/Control_of_fire_by_early_humans
-Homo erectus in modern Georgia (Middle East),Migration,"-1,800,000",1802020.0,1802120.0,938.6,0.2,https://en.wikipedia.org/wiki/Early_expansions_of_hominins_out_of_Africa#Homo_erectus
-First stone tools used outside of Africa (China),Tooling,"-2,120,000",2122020.0,2122010.0,1105.2,0.2,https://en.wikipedia.org/wiki/Stone_Age#Beginning_of_the_Stone_Age
-earliest known hominin presence outside of Africa,Migration,"-2,120,000",2122020.0,2122030.0,1105.2,0.2,https://en.wikipedia.org/wiki/Early_expansions_of_hominins_out_of_Africa#Early_dispersals
-Wave 1 Homo sapiens in West Asia,Migration,"-3,000,000",3002020.0,3002020.0,1563.6,0.3,https://en.wikipedia.org/wiki/Early_expansions_of_hominins_out_of_Africa#Homo_heidelbergensis
-First stone tools used,Tooling,"-3,300,000",3302020.0,3302020.0,1719.8,0.3,https://en.wikipedia.org/wiki/Stone_Age#Beginning_of_the_Stone_Age
-Oldest indirect evidence of stone tools (fossilised animal bones with tool marks),Tooling,"-3,400,000",3402020.0,3402020.0,1771.9,0.3,https://en.wikipedia.org/wiki/Stone_Age#Beginning_of_the_Stone_Age
-Earliest evidence for bipedalism,Lifestyle,"-4,000,000",4002020.0,4002020.0,2084.4,0.4,https://en.wikipedia.org/wiki/Human_skeletal_changes_due_to_bipedalism
-Chimpanzee–human last common ancestor,Ancestry,"-6,000,000",6002020.0,6002020.0,3126.1,0.6,https://en.wikipedia.org/wiki/Chimpanzee%E2%80%93human_last_common_ancestor
-Hominiae-Ponginae last common ancestor (Human/Chimp and Gorilla lines,Ancestry,"-9,000,000",9002020.0,9002020.0,4688.6,0.9,https://en.wikipedia.org/wiki/Homininae#Evolution
-Earliest evidence of dinosaurs,Life,"-243,000,000",243002020.0,243002020.0,126563.6,24.1,https://en.wikipedia.org/wiki/Dinosaur
-Earliest evidence of mammals,Ancestry,"-323,000,000",323002020.0,323002020.0,168230.2,32.0,https://en.wikipedia.org/wiki/Mammal#Origins
-Earliest evidence for multicellular organisms,Ancestry,"-600,000,000",600002020.0,600002020.0,312501.1,59.4,https://en.wikipedia.org/wiki/Multicellular_organism#Origin_hypotheses
-Great Oxidation Event - first significant amount of O2 in atmosphere due to cyanobacteria,Geological,"-2,400,000,000",2400002020.0,2400002020.0,1250001.1,237.6,https://en.wikipedia.org/wiki/Great_Oxidation_Event
-Earliest known life forms,Life,"-3,770,000,000",3770002020.0,3770002020.0,1963542.7,373.3,https://en.wikipedia.org/wiki/Earliest_known_life_forms
-Oceans form on earth,Geological,"-4,280,000,000",4280002020.0,4280002020.0,2229167.7,423.8,https://en.wikipedia.org/wiki/Origin_of_water_on_Earth#History_of_water_on_Earth
-Age of the Earth,Geological,"-4,540,000,000",4540002020.0,4540002020.0,2364584.4,449.5,https://en.wikipedia.org/wiki/Age_of_the_Earth
+title,category,year,unit,years_from_today,years_from_today_augmented,feet from start,miles from start,reference
+Albert Einstein publishes paper on general relativity,Science,1916,yr,104.0,104.0,0.1,0.0,
+Charles Darwin publishes On The Origin of Species,Science,1859,yr,161.0,161.0,0.1,0.0,
+United States of America declares independence,Government,1776,yr,244.0,244.0,0.1,0.0,
+Issac Newton publishes Principia - lays the foundation of classical mechanics,Science,1687,yr,333.0,333.0,0.2,0.0,
+William Shakespeare born,Arts,1564,yr,456.0,456.0,0.2,0.0,
+Nicolaus Copernicus presents mathematical model for heliocentrism,Science,1543,yr,477.0,477.0,0.2,0.0,https://en.wikipedia.org/wiki/Copernican_heliocentrism#Copernican_theory
+Martin Luther writes 95 Theses,Religion,1517,yr,503.0,503.0,0.3,0.0,https://en.wikipedia.org/wiki/Ninety-five_Theses
+The Rennaissance starts in Florence,Age,1400,ya,600.0,600.0,0.3,0.0,
+Black Death,Event,1347,yr,673.0,673.0,0.4,0.0,https://en.wikipedia.org/wiki/Black_Death
+King John of England agrees to the Magna Carta,Government,1215,yr,805.0,805.0,0.4,0.0,https://en.wikipedia.org/wiki/Magna_Carta
+Genghis Khan born,People,1162,yr,858.0,858.0,0.4,0.0,
+Muhammed born,Religion,570,yr,1450.0,1450.0,0.8,0.0,
+Birth of Jesus Christ,Event,0,yr,2020.0,2020.0,1.1,0.0,
+Julius Caesar takes power,Event,-44,yr,2064.0,2064.0,1.1,0.0,
+Cleopatra born,People,-69,yr,2089.0,2089.0,1.1,0.0,https://en.wikipedia.org/wiki/Cleopatra
+Alexander The Great starts his reign,Event,-336,yr,2356.0,2356.0,1.2,0.0,
+Socrates born,People,-470,yr,2490.0,2480.0,1.3,0.0,
+Buddha born,Religion,-480,yr,2500.0,2500.0,1.3,0.0,https://en.wikipedia.org/wiki/Gautama_Buddha
+Confucius born,People,-551,yr,2571.0,2571.0,1.3,0.0,
+Iron Age starts in Sub-Saharan Africa,Tooling,-2500,ya,4500.0,4500.0,2.4,0.0,
+First writing - Cuneiform,Writing,-3100,ya,5100.0,5100.0,2.7,0.0,https://en.wikipedia.org/wiki/Cuneiform#History
+First Egyptian Dynasty,Dynasty,-3150,ya,5150.0,5150.0,2.7,0.0,
+Classic Bronze Age starts - Western Asia and the Near East ,Tooling,-3300,ya,5300.0,5300.0,2.8,0.0,
+Moment of creation - Judaism,Religion,-3760,yr,5780.0,5780.0,3.0,0.0,
+First urban city with full-time bureaucracy: Uruk,Event,-4000,ya,6000.0,6000.0,3.1,0.0,https://en.wikipedia.org/wiki/Uruk
+Earliest evidence for proto-writing (visible marks communicating limited information),Writing,-7000,ya,9000.0,9000.0,4.7,0.0,
+Earliest signs of humans starting sedentary lifestyle,Lifestyle,"-12,000",ya,14000.0,14000.0,7.3,0.0,https://en.wikipedia.org/wiki/Cradle_of_civilization#Rise_of_civilization
+Homo sapiens in North America,Migration,"-12,000",ya,14000.0,14020.0,7.3,0.0,
+Homo sapiens cross the Bering Strait,Migration,"-15,000",ya,17000.0,17000.0,8.9,0.0,
+Earliest pottery - China,Tooling,"-18,000",ya,20000.0,20000.0,10.4,0.0,https://en.wikipedia.org/wiki/Chinese_ceramics#Early_wares
+Homo sapiens in Northern Asia,Migration,"-25,000",ya,27000.0,27000.0,14.1,0.0,
+Earliest evidence of counting (tally marks),Writing,"-30,000",ya,32000.0,32000.0,16.7,0.0,https://en.wikipedia.org/wiki/Prehistoric_numerals#Background
+Homo sapiens in Sound Pacific,Migration,"-30,000",ya,32000.0,32020.0,16.7,0.0,
+First symbols in ice age European cave paintings ,Writing,"-40,000",ya,42000.0,41990.0,21.9,0.0,https://en.wikipedia.org/wiki/Proto-writing#Neolithic_Europe
+Wave 2 Homo sapiens in Europe,Migration,"-40,000",ya,42000.0,42000.0,21.9,0.0,
+Last known Neanderthals walked the Earth,Life,"-40,000",ya,42000.0,42020.0,21.9,0.0,https://en.wikipedia.org/wiki/Neanderthal
+Wave 2 Homo sapiens in Australia,Migration,"-50,000",ya,52000.0,52000.0,27.1,0.0,
+Homo Sapiens likely bred with Neanderthals (again),,-65000,ya,67000.0,67000.0,34.9,0.0,https://en.wikipedia.org/wiki/Neanderthal
+Wave 2 Homo sapiens in India and South Asia,Migration,"-70,000",ya,72000.0,72000.0,37.5,0.0,
+"Toba Supervolcano explosion - Earth's largest known eruption. Human population drops as low as 3,000",,"-75,000",ya,77000.0,77000.0,40.1,0.0,
+Homo Sapiens likely bred with Neanderthals (the first time),,-100000,ya,102000.0,102000,53.1,0.0,https://en.wikipedia.org/wiki/Neanderthal
+Wave 2 Homo sapiens in the Levant (Middle East),Migration,"-100,000",ya,102000.0,102020.0,53.1,0.0,
+Earliest evidence for use of clothing,Lifestyle,"-170,000",ya,172000.0,172000.0,89.6,0.0,https://en.wikipedia.org/wiki/Clothing#Origin_of_clothing
+Homo Sapiens might have bred with Neanderthals (the actual first time),,-250000,ya,252000.0,252000.0,131.3,0.0,https://en.wikipedia.org/wiki/Neanderthal
+First evidence for cooking food,Lifestyle,"-1,000,000",ya,1002000.0,1002000.0,521.9,0.1,https://en.wikipedia.org/wiki/Cooking#History
+Homo erectus in Europe (Spain),Migration,"-1,400,000",ya,1402000.0,1402000.0,730.2,0.1,https://en.wikipedia.org/wiki/Early_expansions_of_hominins_out_of_Africa#Homo_erectus
+Homo erectus in Indonesia,Migration,"-1,660,000",ya,1662000.0,1662000.0,865.6,0.2,https://en.wikipedia.org/wiki/Early_expansions_of_hominins_out_of_Africa#Homo_erectus
+Homo erectus in China,Migration,"-1,700,000",ya,1702000.0,1702000.0,886.5,0.2,https://en.wikipedia.org/wiki/Early_expansions_of_hominins_out_of_Africa#Homo_erectus
+Earliest evidence for fire control,Tooling,"-1,800,000",ya,1802000.0,1802000.0,938.6,0.2,https://en.wikipedia.org/wiki/Control_of_fire_by_early_humans
+Homo erectus in modern Georgia (Middle East),Migration,"-1,800,000",ya,1802000.0,1802000.0,938.6,0.2,https://en.wikipedia.org/wiki/Early_expansions_of_hominins_out_of_Africa#Homo_erectus
+First stone tools used outside of Africa (China),Tooling,"-2,120,000",ya,2122000.0,2122000.0,1105.2,0.2,https://en.wikipedia.org/wiki/Stone_Age#Beginning_of_the_Stone_Age
+earliest known hominin presence outside of Africa,Migration,"-2,120,000",ya,2122000.0,2122020.0,1105.2,0.2,https://en.wikipedia.org/wiki/Early_expansions_of_hominins_out_of_Africa#Early_dispersals
+Wave 1 Homo sapiens in West Asia,Migration,"-3,000,000",ya,3002000.0,3002000.0,1563.6,0.3,https://en.wikipedia.org/wiki/Early_expansions_of_hominins_out_of_Africa#Homo_heidelbergensis
+First stone tools used,Tooling,"-3,300,000",ya,3302000.0,3302000.0,1719.8,0.3,https://en.wikipedia.org/wiki/Stone_Age#Beginning_of_the_Stone_Age
+Oldest indirect evidence of stone tools (fossilised animal bones with tool marks),Tooling,"-3,400,000",ya,3402000.0,3402000.0,1771.9,0.3,https://en.wikipedia.org/wiki/Stone_Age#Beginning_of_the_Stone_Age
+Earliest evidence for bipedalism,Lifestyle,"-4,000,000",ya,4002000.0,4002000.0,2084.4,0.4,https://en.wikipedia.org/wiki/Human_skeletal_changes_due_to_bipedalism
+Chimpanzee–human last common ancestor,Ancestry,"-6,000,000",ya,6002000.0,6002000.0,3126.1,0.6,https://en.wikipedia.org/wiki/Chimpanzee%E2%80%93human_last_common_ancestor
+Hominiae-Ponginae last common ancestor (Human/Chimp and Gorilla lines,Ancestry,"-9,000,000",ya,9002000.0,9002000.0,4688.6,0.9,https://en.wikipedia.org/wiki/Homininae#Evolution
+Earliest evidence of dinosaurs,Life,"-243,000,000",ya,243002000.0,243002000.0,126563.6,24.1,https://en.wikipedia.org/wiki/Dinosaur
+Earliest evidence of mammals,Ancestry,"-323,000,000",ya,323002000.0,323002000.0,168230.2,32.0,https://en.wikipedia.org/wiki/Mammal#Origins
+Earliest evidence for multicellular organisms,Ancestry,"-600,000,000",ya,600002000.0,600002000.0,312501.1,59.4,https://en.wikipedia.org/wiki/Multicellular_organism#Origin_hypotheses
+Great Oxidation Event - first significant amount of O2 in atmosphere due to cyanobacteria,Geological,"-2,400,000,000",ya,2400002000.0,2400002000.0,1250001.1,237.6,https://en.wikipedia.org/wiki/Great_Oxidation_Event
+Earliest known life forms,Life,"-3,770,000,000",ya,3770002000.0,3770002000.0,1963542.7,373.3,https://en.wikipedia.org/wiki/Earliest_known_life_forms
+Oceans form on earth,Geological,"-4,280,000,000",ya,4280002000.0,4280002000.0,2229167.7,423.8,https://en.wikipedia.org/wiki/Origin_of_water_on_Earth#History_of_water_on_Earth
+Age of the Earth,Geological,"-4,540,000,000",ya,4540002000.0,4540002000.0,2364584.4,449.5,https://en.wikipedia.org/wiki/Age_of_the_Earth
