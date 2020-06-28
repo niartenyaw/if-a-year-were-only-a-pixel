@@ -27,7 +27,6 @@ const Intro = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 `;
 
 class App extends React.Component {
