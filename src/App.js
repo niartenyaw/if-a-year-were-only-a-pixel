@@ -1,7 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
-import DataPoint from './components/DataPoint'
+import Data from './components/Data'
 import Ruler from './components/Ruler'
 
 const maxYear = 9003020
@@ -48,12 +48,6 @@ const History = styled.div`
   flex-direction: column-reverse;
 `
 
-const DataPoints = styled.div`
-  height: 100%;
-  width: 100%;
-  position: relative;
-`
-
 class App extends React.Component {
   static get maxYear () {
     return maxYear
@@ -67,7 +61,6 @@ class App extends React.Component {
     super()
 
     this.state = {
-      data: [],
       scrollLocation: window.innerWidth * -1 // make sure middleYear is negative at mount
     }
 
@@ -78,11 +71,6 @@ class App extends React.Component {
 
   componentDidMount () {
     this.app.current.addEventListener('scroll', this.handleScroll)
-    window.fetch(`${window.location}/data.json`)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ data })
-      })
   }
 
   componentWillUnmount () {
@@ -124,17 +112,9 @@ class App extends React.Component {
             <Ruler
               scrollLocation={this.state.scrollLocation}
               offset={App.offset}
-              maxYear={maxYear}
+              maxYear={this.maxYear}
             />
-            <DataPoints>
-              {this.state.data.map(point => (
-                <DataPoint
-                  key={point.title}
-                  data={point}
-                  maxYear={maxYear}
-                />
-              ))}
-            </DataPoints>
+            <Data maxYear={this.maxYear} />
           </History>
         </Scrollable>
       </AppContainer>

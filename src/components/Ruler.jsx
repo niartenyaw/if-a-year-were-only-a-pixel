@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 import Mark from './Ruler/Mark'
 import Counter from './Counter'
