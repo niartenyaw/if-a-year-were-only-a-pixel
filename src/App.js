@@ -28,6 +28,32 @@ const Intro = styled.div`
   flex-direction: column;
 `
 
+const Header = styled.div`
+  margin-top: 30%;
+  padding: 0 50px;
+`
+
+const Footer = styled.div`
+  margin-bottom: 30px;
+`
+
+const Text = styled.p`
+  margin: 0;
+`
+
+const History = styled.div`
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+`
+
+const DataPoints = styled.div`
+  height: 100%;
+  width: 100%;
+  position: relative;
+`
+
 class App extends React.Component {
   static get maxYear () {
     return maxYear
@@ -70,74 +96,37 @@ class App extends React.Component {
   render () {
     const maxYear = App.maxYear
 
-    const headerStyles = {
-      marginTop: '30%',
-      padding: '0 50px'
-    }
-
-    const sectionStyle = {
-    }
-
-    const pStyle = {
-      margin: '0'
-    }
-
-    const footerStyle = {
-      marginBottom: '30px'
-    }
-
-    const historyStyles = {
-      position: 'relative',
-      width: '100%',
-      display: 'flex',
-      flexDirection: 'column-reverse'
-    }
-
-    const datapointsStyles = {
-      height: '100%',
-      width: '100%',
-      position: 'relative'
-    }
-
     return (
       <AppContainer ref={this.app} className='App' maxYear={maxYear}>
         <Scrollable>
           <Intro className='intro'>
-            <header style={headerStyles}>
+            <Header>
               <h1>
                 if a year were only a pixel.
               </h1>
-              <p>
+              <Text>
                 a showcase of time.
-              </p>
-            </header>
-            <section style={sectionStyle}>
-              <p>
+              </Text>
+            </Header>
+            <section>
+              <Text>
                 scroll right to explore
-              </p>
+              </Text>
             </section>
-            <footer style={footerStyle}>
-              <p>
-                this first long red line is the year 2020
-              </p>
-              <p style={pStyle}>
-                every small mark is 10 years apart
-              </p>
-              <p style={pStyle}>
-                the bigger ones are 100 years apart
-              </p>
-              <p style={pStyle}>
-                the largest are 1000 years apart
-              </p>
-            </footer>
+            <Footer>
+              <Text>this first long red line is the year 2020</Text>
+              <Text>every small mark is 10 years apart</Text>
+              <Text>the bigger ones are 100 years apart</Text>
+              <Text>the largest are 1000 years apart</Text>
+            </Footer>
           </Intro>
-          <div className='history' style={historyStyles}>
+          <History>
             <Ruler
               scrollLocation={this.state.scrollLocation}
               offset={App.offset}
               maxYear={maxYear}
             />
-            <div className='datapoints' style={datapointsStyles}>
+            <DataPoints>
               {this.state.data.map(point => (
                 <DataPoint
                   key={point.title}
@@ -145,8 +134,8 @@ class App extends React.Component {
                   maxYear={maxYear}
                 />
               ))}
-            </div>
-          </div>
+            </DataPoints>
+          </History>
         </Scrollable>
       </AppContainer>
     )

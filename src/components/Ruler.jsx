@@ -1,88 +1,78 @@
 import React from 'react'
-import RulerMarking from './RulerMarking'
+import styled from 'styled-components'
+
+import Mark from './Ruler/Mark'
 import Counter from './Counter'
 
-const yearsPerMarking = 10
+const yearsPerMark = 10
 
-class Ruler extends React.Component {
-  uppermostMarkerPosition () {
-    return Math.round((this.props.scrollLocation - window.innerWidth) / Ruler.yearsPerMarking) * Ruler.yearsPerMarking
-  }
+const CounterContainer = styled.div`
+  height: 0;
+  width: 100%;
+`
 
-  firstMarkingLocation () {
-    return Math.max(this.uppermostMarkerPosition(), 0)
-  }
+const MarksContainer = styled.div`
+  width: 100%;
+  height: 150px;
+  position: relative;
+`
 
-  lastMarkingLocation () {
-    return Math.min(this.lowermostMarkerPosition(), this.endOfHistory())
-  }
+const Ruler = styled.div`
+  height: 150px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`
 
-  lowermostMarkerPosition () {
-    return this.firstMarkingLocation() + (3 * window.innerWidth)
-  }
+const uppermostMarkerPosition = (props) => (
+  Math.round((props.scrollLocation - window.innerWidth) / yearsPerMark) * yearsPerMark
+)
 
-  static get yearsPerMarking () {
-    return yearsPerMarking
-  }
+const firstMarkLocation = (props) => (
+  Math.max(uppermostMarkerPosition(props), 0)
+)
 
-  endOfHistory () {
-    return this.props.maxYear
-  }
+const lowermostMarkerPosition = (props) => (
+  firstMarkLocation(props) + (3 * window.innerWidth)
+)
 
-  numberOfMarkings () {
-    return (this.lastMarkingLocation() - this.firstMarkingLocation()) / Ruler.yearsPerMarking
-  }
+const lastMarkLocation = (props) => (
+  Math.min(lowermostMarkerPosition(props), props.maxYear)
+)
 
-  yearsAgo (i) {
-    return Math.round(this.firstMarkingLocation() + i * Ruler.yearsPerMarking)
-  }
+const numberOfMarks = (props) => (
+  (lastMarkLocation(props) - firstMarkLocation(props)) / yearsPerMark
+)
 
-  markings () {
-    const markings = []
-    for (let i = 0; i < this.numberOfMarkings(); i++) {
-      const yearsAgo = this.yearsAgo(i)
-      markings.push(
-        <RulerMarking key={yearsAgo} yearsAgo={yearsAgo} />
-      )
-    }
+const calculateYearsAgo = (props, i) => (
+  Math.round(firstMarkLocation(props) + i * yearsPerMark)
+)
 
-    return markings
-  }
+const middleYear = ({ scrollLocation }) => (
+  Math.round(scrollLocation + (window.innerWidth / 2))
+)
 
-  middleYear () {
-    return Math.round(this.props.scrollLocation + (window.innerWidth / 2))
-  }
-
-  render () {
-    const markingStyles = {
-      width: '100%',
-      height: '150px',
-      position: 'relative'
-    }
-
-    const rulerStyles = {
-      height: '150px',
-      width: '100%',
-      display: 'flex',
-      flexDirection: 'column'
-    }
-
-    const counterContainerStyles = {
-      height: '0',
-      width: '100%'
-    }
-
-    return (
-      <div className='ruler' style={rulerStyles}>
-        <div className='counter-container' style={counterContainerStyles}>
-          <Counter year={this.middleYear()} />
-        </div>
-        <div className='markings' style={markingStyles}>
-          {this.markings()}
-        </div>
-      </div>
+const marks = (props) => {
+  const marks = []
+  for (let i = 0; i < numberOfMarks(props); i++) {
+    const yearsAgo = calculateYearsAgo(props, i)
+    marks.push(
+      <Mark key={yearsAgo} yearsAgo={yearsAgo} />
     )
   }
-};
 
-export default Ruler
+  return marks
+}
+
+export default (props) => {
+  return (
+    <Ruler>
+      <CounterContainer>
+        <Counter year={middleYear(props)} />
+      </CounterContainer>
+      <MarksContainer>
+        {marks(props)}
+      </MarksContainer>
+    </Ruler>
+  )
+}

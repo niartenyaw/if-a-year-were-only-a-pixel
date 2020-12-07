@@ -8,27 +8,27 @@ const Arrow = styled.div`
   margin: 10px 0;
 `
 
-const Counter = (props) => {
+const Counter = styled.div`
+  position: fixed;
+  left: ${({ innerWidth }) => innerWidth / 2}px;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  width: 140px;
+`
+
+export default (props) => {
   let { year } = props
   if (year < 0) return null
   if (year === 0) year += 0 // stupid negative zero
 
-  const style = {
-    position: 'fixed',
-    left: `${window.innerWidth / 2}px`,
-    bottom: '20px',
-    transform: 'translateX(-50%)',
-    display: 'flex',
-    flexDirection: 'column-reverse',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    width: '140px'
-  }
-
   const formattedYear = year.toLocaleString(undefined, { minimumFrationDigits: 0 })
 
   return (
-    <div style={style}>
+    <Counter innerWidth={window.innerWidth}>
       <div>
         <div>
           {formattedYear}
@@ -38,8 +38,6 @@ const Counter = (props) => {
         </div>
       </div>
       <Arrow layer='1' />
-    </div>
+    </Counter>
   )
 }
-
-export default Counter
