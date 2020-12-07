@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import './App.css'
 import DataPoint from './components/DataPoint'
 import Ruler from './components/Ruler'
 
@@ -80,7 +79,7 @@ class App extends React.Component {
     }
 
     const pStyle = {
-      margin: '0 0'
+      margin: '0'
     }
 
     const footerStyle = {
