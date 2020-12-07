@@ -6,6 +6,46 @@ import Counter from './Counter'
 
 const yearsPerMark = 10
 
+const uppermostMarkPosition = (props) => (
+  Math.round((props.scrollLocation - window.innerWidth) / yearsPerMark) * yearsPerMark
+)
+
+const firstMarkLocation = (props) => (
+  Math.max(uppermostMarkPosition(props), 0)
+)
+
+const lowermostMarkPosition = (props) => (
+  firstMarkLocation(props) + (3 * window.innerWidth)
+)
+
+const lastMarkLocation = (props) => (
+  Math.min(lowermostMarkPosition(props), props.maxYear)
+)
+
+const numberOfMarks = (props) => (
+  (lastMarkLocation(props) - firstMarkLocation(props)) / yearsPerMark
+)
+
+const calculateLocation = (props, i) => (
+  Math.round(firstMarkLocation(props) + i * yearsPerMark)
+)
+
+const middleYear = ({ scrollLocation }) => (
+  Math.round(scrollLocation + (window.innerWidth / 2))
+)
+
+const marks = (props) => {
+  const marks = []
+  for (let i = 0; i < numberOfMarks(props); i++) {
+    const location = calculateLocation(props, i)
+    marks.push(
+      <Mark key={location} location={location} />
+    )
+  }
+
+  return marks
+}
+
 const CounterContainer = styled.div`
   height: 0;
   width: 100%;
@@ -23,46 +63,6 @@ const Ruler = styled.div`
   display: flex;
   flex-direction: column;
 `
-
-const uppermostMarkerPosition = (props) => (
-  Math.round((props.scrollLocation - window.innerWidth) / yearsPerMark) * yearsPerMark
-)
-
-const firstMarkLocation = (props) => (
-  Math.max(uppermostMarkerPosition(props), 0)
-)
-
-const lowermostMarkerPosition = (props) => (
-  firstMarkLocation(props) + (3 * window.innerWidth)
-)
-
-const lastMarkLocation = (props) => (
-  Math.min(lowermostMarkerPosition(props), props.maxYear)
-)
-
-const numberOfMarks = (props) => (
-  (lastMarkLocation(props) - firstMarkLocation(props)) / yearsPerMark
-)
-
-const calculateYearsAgo = (props, i) => (
-  Math.round(firstMarkLocation(props) + i * yearsPerMark)
-)
-
-const middleYear = ({ scrollLocation }) => (
-  Math.round(scrollLocation + (window.innerWidth / 2))
-)
-
-const marks = (props) => {
-  const marks = []
-  for (let i = 0; i < numberOfMarks(props); i++) {
-    const yearsAgo = calculateYearsAgo(props, i)
-    marks.push(
-      <Mark key={yearsAgo} yearsAgo={yearsAgo} />
-    )
-  }
-
-  return marks
-}
 
 export default (props) => {
   return (

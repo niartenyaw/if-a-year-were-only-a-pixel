@@ -4,21 +4,19 @@ import styled from 'styled-components/macro'
 import Data from './components/Data'
 import Ruler from './components/Ruler'
 
-const maxYear = 9003020
-const offset = window.innerWidth
-
 const AppContainer = styled.div`
-  width: ${props => props.maxYear}px;
+  width: ${({ size }) => size}px;
   height: 100vh;
   color: white;
   background-color: black;
   width: 100vw;
   overflow: scroll;
-`
+  `
 
 const Scrollable = styled.div`
   display: flex;
-  width: ${() => maxYear}px;
+  width: ${({ size }) => size}px;
+  padding-right: 1000px;
 `
 
 const Intro = styled.div`
@@ -50,11 +48,11 @@ const History = styled.div`
 
 class App extends React.Component {
   static get maxYear () {
-    return maxYear
+    return 6000000
   }
 
   static get offset () {
-    return offset
+    return window.innerWidth
   }
 
   constructor () {
@@ -82,11 +80,9 @@ class App extends React.Component {
   }
 
   render () {
-    const maxYear = App.maxYear
-
     return (
-      <AppContainer ref={this.app} className='App' maxYear={maxYear}>
-        <Scrollable>
+      <AppContainer ref={this.app} className='App' size={App.maxYear}>
+        <Scrollable size={App.maxYear}>
           <Intro className='intro'>
             <Header>
               <h1>
@@ -112,9 +108,9 @@ class App extends React.Component {
             <Ruler
               scrollLocation={this.state.scrollLocation}
               offset={App.offset}
-              maxYear={this.maxYear}
+              maxYear={App.maxYear}
             />
-            <Data maxYear={this.maxYear} />
+            <Data maxYear={App.maxYear} />
           </History>
         </Scrollable>
       </AppContainer>

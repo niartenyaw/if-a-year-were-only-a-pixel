@@ -6,19 +6,19 @@ const Mark = styled.div`
   height: ${({ lineLength }) => lineLength}px;
   background-color: red;
   position: absolute;
-  left: ${({ yearsAgo }) => yearsAgo}px;
+  left: ${({ location }) => location}px;
   top: 0;
 `
 
-export default ({ markingLocation, yearsAgo }) => {
+export default ({ markingLocation, location }) => {
   let lineLength = 10
-  if (yearsAgo % 1000 === 0) {
+  if (location % 1000 === 0) {
     lineLength = 50
-  } else if (yearsAgo % 100 === 0) {
+  } else if (location % 100 === 0) {
     lineLength = 20
   }
 
   return (
-    <Mark lineLength={lineLength} yearsAgo={yearsAgo} />
+    <Mark lineLength={lineLength} location={location} />
   )
 }
