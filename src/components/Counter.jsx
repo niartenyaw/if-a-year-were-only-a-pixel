@@ -1,5 +1,12 @@
 import React from 'react';
-import Arrow from './Arrow';
+import styled from 'styled-components';
+
+const Arrow = styled.div`
+  background-color: white;
+  height: ${({ layer }) => layer * 30}px;
+  width: 1px;
+  margin: 10px 0;
+`;
 
 const Counter = (props) => {
   let { year } = props;
@@ -30,7 +37,7 @@ const Counter = (props) => {
           years ago
         </div>
       </div>
-      <Arrow type="vertical"/>
+      <Arrow layer="1" />
     </div>
   );
 };

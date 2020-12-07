@@ -1,34 +1,49 @@
 import React from 'react';
-import Arrow from './Arrow';
-
 import styled from 'styled-components';
 
 const TitleContainer = styled.div`
-  transform: translateX(-10px);
-  writing-mode: sideways-lr;
-  flex-grow: 1;
-  text-align: start;
+  position: relative;
+`;
+const Title = styled.div`
+  position: absolute;
+  width: max-content;
+  bottom: -20px;
+  left: 5px;
 `;
 
 const Point = styled.div`
   position: absolute;
-  left: ${props => props.year}px;
+  left: ${({ yearsFromToday }) => yearsFromToday}px;
   bottom: 0px;
   display: flex;
   flex-direction: column-reverse;
   height: 100%;
 `;
 
+const Arrow = styled.div`
+  background-color: white;
+  height: ${({ layer }) => layer * 30}px;
+  width: 1px;
+  margin: 10px 0;
+`;
+
 const DataPoint = ({ data, maxYear }) => {
-  if (data.years_from_today > maxYear) {
+
+  const currentYear = (new Date(Date.now())).getYear() + 1900; // fuck javascript
+
+  const yearsFromToday = data.year ? (0 - (data.year - currentYear)) : data.years_ago
+
+  if (yearsFromToday > maxYear) {
     return null;
   }
 
   return (
-    <Point className="datapoint" year={data.years_from_today_augmented}>
-      <Arrow type="vertical"/>
+    <Point className="datapoint" yearsFromToday={yearsFromToday}>
+      <Arrow layer={data.layer || 1} />
       <TitleContainer>
-        { data.title }
+        <Title>
+          { data.title }
+        </Title>
       </TitleContainer>
     </Point>
   );
