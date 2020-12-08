@@ -30,8 +30,8 @@ const calculateLocation = (props, i) => (
   Math.round(firstMarkLocation(props) + i * yearsPerMark)
 )
 
-const middleYear = ({ location }) => (
-  Math.round(location + (window.innerWidth / 2))
+const middleYear = ({ location, maxYear }) => (
+  maxYear - Math.round(location + (window.innerWidth / 2))
 )
 
 const marks = (props) => {
@@ -69,7 +69,7 @@ export default (props) => {
   return (
     <Ruler>
       <CounterContainer>
-        <Counter year={middleYear(props)} />
+        <Counter year={middleYear(props)} maxYear={props.maxYear} />
       </CounterContainer>
       <MarksContainer>
         {marks(props)}

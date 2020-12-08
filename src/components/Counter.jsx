@@ -2,10 +2,12 @@ import React from 'react'
 import styled from 'styled-components/macro'
 
 const Arrow = styled.div`
-  background-color: white;
-  height: ${({ layer }) => layer * 30}px;
-  width: 1px;
-  margin: 10px 0;
+  height: 0;
+  width: 0;
+  margin-bottom: 20px;
+  border-bottom: 20px solid white;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
 `
 
 const Counter = styled.div`
@@ -21,10 +23,9 @@ const Counter = styled.div`
 `
 
 export default (props) => {
-  let { year } = props
-  if (year < 0) return null
+  let { year, maxYear } = props
+  if (year > maxYear || isNaN(year)) return null
   if (year === 0) year += 0 // stupid negative zero
-
   const formattedYear = year.toLocaleString(undefined, { minimumFrationDigits: 0 })
 
   return (

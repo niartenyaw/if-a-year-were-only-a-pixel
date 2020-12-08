@@ -6,15 +6,29 @@ const Intro = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `
 
 const Header = styled.div`
-  margin-top: 30%;
-  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
-const Footer = styled.div`
+const Main = styled.div`
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const Footer = styled.div``
+
+const Section = styled.div`
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 const Text = styled.p`
@@ -27,20 +41,24 @@ export default () => (
       <h1>
         if a year were only a pixel.
       </h1>
-      <Text>
+      <h3>
         a showcase of time.
-      </Text>
+      </h3>
     </Header>
-    <section>
-      <Text>
-        scroll right to explore
-      </Text>
-    </section>
+    <Main>
+      <Section>
+        <Text>every small mark is 10 years apart</Text>
+        <Text>medium marks are every 100 years</Text>
+        <Text>large marks are 1000</Text>
+      </Section>
+      <Section>
+        <Text>this first long red line is 6 million years ago</Text>
+      </Section>
+    </Main>
     <Footer>
-      <Text>this first long red line is the year 2020</Text>
-      <Text>every small mark is 10 years apart</Text>
-      <Text>the bigger ones are 100 years apart</Text>
-      <Text>the largest are 1000 years apart</Text>
+      <Text>
+        scroll right to explore --->
+      </Text>
     </Footer>
   </Intro>
 

@@ -1,16 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-const TitleContainer = styled.div`
-  position: relative;
-`
-const Title = styled.div`
-  position: absolute;
-  width: max-content;
-  bottom: -20px;
-  left: 5px;
-`
-
 const Point = styled.div`
   position: absolute;
   left: ${({ location }) => location}px;
@@ -21,10 +11,20 @@ const Point = styled.div`
 `
 
 const Arrow = styled.div`
-  background-color: white;
   height: ${({ layer }) => layer * 30}px;
-  width: 1px;
+  width: 5px;
   margin: 10px 0;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+`
+const TitleContainer = styled.div`
+  position: relative;
+`
+const Title = styled.div`
+  position: absolute;
+  width: max-content;
+  max-width: 400px;
+  left: 10px;
 `
 
 export default ({ point, maxYear }) => {
