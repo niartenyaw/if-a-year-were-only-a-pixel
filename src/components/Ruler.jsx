@@ -7,7 +7,7 @@ import Counter from './Counter'
 const yearsPerMark = 10
 
 const uppermostMarkPosition = (props) => (
-  Math.round((props.scrollLocation - window.innerWidth) / yearsPerMark) * yearsPerMark
+  Math.round((props.debouncedLocation - window.innerWidth) / yearsPerMark) * yearsPerMark
 )
 
 const firstMarkLocation = (props) => (
@@ -15,7 +15,7 @@ const firstMarkLocation = (props) => (
 )
 
 const lowermostMarkPosition = (props) => (
-  firstMarkLocation(props) + (3 * window.innerWidth)
+  firstMarkLocation(props) + (10 * window.innerWidth)
 )
 
 const lastMarkLocation = (props) => (
@@ -30,13 +30,14 @@ const calculateLocation = (props, i) => (
   Math.round(firstMarkLocation(props) + i * yearsPerMark)
 )
 
-const middleYear = ({ scrollLocation }) => (
-  Math.round(scrollLocation + (window.innerWidth / 2))
+const middleYear = ({ location }) => (
+  Math.round(location + (window.innerWidth / 2))
 )
 
 const marks = (props) => {
   const marks = []
-  for (let i = 0; i < numberOfMarks(props); i++) {
+  const numMarks = numberOfMarks(props)
+  for (let i = 0; i < numMarks; i++) {
     const location = calculateLocation(props, i)
     marks.push(
       <Mark key={location} location={location} />

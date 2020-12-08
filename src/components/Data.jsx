@@ -18,21 +18,45 @@ export default class Data extends React.Component {
     }
   }
 
+  presentedData () {
+    return this.state.data.filter(point => (
+      point.location > this.lowerBound() && point.location < this.upperBound()
+    ))
+  }
+
+  lowerBound () {
+    return this.props.debouncedLocation - this.buffer()
+  }
+
+  upperBound () {
+    return this.props.debouncedLocation + window.innerWidth + this.buffer()
+  }
+
+  buffer () {
+    return window.innerWidth * 0.5
+  }
+
   componentDidMount () {
     window.fetch(`${window.location}/data.json`)
       .then(response => response.json())
       .then(data => {
+        const currentYear = (new Date(Date.now())).getYear() + 1900 // fuck javascript
+        data.forEach(point => {
+          point.yearsFromToday = point.year ? (0 - (point.year - currentYear)) : point.years_ago
+          point.location = this.props.maxYear - point.yearsFromToday
+        })
         this.setState({ data })
       })
   }
 
   render () {
+    const presentedData = this.presentedData()
     return (
       <DataContainer>
-        {this.state.data.map(point => (
+        {presentedData.map(point => (
           <Point
             key={point.title}
-            data={point}
+            point={point}
             maxYear={this.props.maxYear}
           />
         ))}

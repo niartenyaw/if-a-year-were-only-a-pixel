@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
+import Intro from './components/Intro'
 import Data from './components/Data'
 import Ruler from './components/Ruler'
 
@@ -19,27 +20,7 @@ const Scrollable = styled.div`
   padding-right: 1000px;
 `
 
-const Intro = styled.div`
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-`
-
-const Header = styled.div`
-  margin-top: 30%;
-  padding: 0 50px;
-`
-
-const Footer = styled.div`
-  margin-bottom: 30px;
-`
-
-const Text = styled.p`
-  margin: 0;
-`
-
-const History = styled.div`
+const Timeline = styled.div`
   position: relative;
   width: 100%;
   display: flex;
@@ -59,7 +40,8 @@ class App extends React.Component {
     super()
 
     this.state = {
-      scrollLocation: window.innerWidth * -1 // make sure middleYear is negative at mount
+      debouncedLocation: window.innerWidth * -1, // make sure middleYear is negative at mount so Counter doesn't display
+      debounce: null
     }
 
     this.app = React.createRef()
@@ -76,42 +58,43 @@ class App extends React.Component {
   }
 
   handleScroll (e) {
-    this.setState({ scrollLocation: e.target.scrollLeft - App.offset })
+    // Always set location so it is up to date
+    this.setState({ location: e.target.scrollLeft - App.offset }, () => {
+      if (this.state.debounce) {
+        const now = Date.now()
+        if (now - this.state.debounce >= 200) {
+          this.setState({ debouncedLocation: this.state.location, debounce: now })
+        } else {
+          setTimeout(() => {
+            const now = Date.now()
+            if (this.state.debounce && now - this.state.debounce >= 300) {
+              this.setState({ debouncedLocation: this.state.location, debounce: null })
+            }
+          }, 500)
+        }
+      } else {
+        this.setState({ debounce: Date.now() })
+      }
+    })
   }
 
   render () {
     return (
       <AppContainer ref={this.app} className='App' size={App.maxYear}>
         <Scrollable size={App.maxYear}>
-          <Intro className='intro'>
-            <Header>
-              <h1>
-                if a year were only a pixel.
-              </h1>
-              <Text>
-                a showcase of time.
-              </Text>
-            </Header>
-            <section>
-              <Text>
-                scroll right to explore
-              </Text>
-            </section>
-            <Footer>
-              <Text>this first long red line is the year 2020</Text>
-              <Text>every small mark is 10 years apart</Text>
-              <Text>the bigger ones are 100 years apart</Text>
-              <Text>the largest are 1000 years apart</Text>
-            </Footer>
-          </Intro>
-          <History>
+          <Intro />
+          <Timeline>
             <Ruler
-              scrollLocation={this.state.scrollLocation}
+              debouncedLocation={this.state.debouncedLocation}
+              location={this.state.location}
               offset={App.offset}
               maxYear={App.maxYear}
             />
-            <Data maxYear={App.maxYear} />
-          </History>
+            <Data
+              debouncedLocation={this.state.debouncedLocation}
+              maxYear={App.maxYear}
+            />
+          </Timeline>
         </Scrollable>
       </AppContainer>
     )

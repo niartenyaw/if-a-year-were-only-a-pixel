@@ -13,7 +13,7 @@ const Title = styled.div`
 
 const Point = styled.div`
   position: absolute;
-  left: ${({ yearsFromToday }) => yearsFromToday}px;
+  left: ${({ location }) => location}px;
   bottom: 0px;
   display: flex;
   flex-direction: column-reverse;
@@ -27,25 +27,19 @@ const Arrow = styled.div`
   margin: 10px 0;
 `
 
-const DataPoint = ({ data, maxYear }) => {
-  const currentYear = (new Date(Date.now())).getYear() + 1900 // fuck javascript
-
-  const yearsFromToday = data.year ? (0 - (data.year - currentYear)) : data.years_ago
-
-  if (yearsFromToday > maxYear) {
+export default ({ point, maxYear }) => {
+  if (point.yearsFromToday > maxYear) {
     return null
   }
 
   return (
-    <Point className='datapoint' yearsFromToday={yearsFromToday}>
-      <Arrow layer={data.layer || 1} />
+    <Point location={point.location}>
+      <Arrow layer={point.layer || 1} />
       <TitleContainer>
         <Title>
-          {data.title}
+          {point.title}
         </Title>
       </TitleContainer>
     </Point>
   )
 }
-
-export default DataPoint
