@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 
 import Title from './Title'
 
-const Point = styled.div`
+const Info = styled.div`
   position: absolute;
   left: ${({ location }) => location}px;
   bottom: 0px;
@@ -11,20 +11,21 @@ const Point = styled.div`
   flex-direction: column-reverse;
   height: 100%;
 `
-
-const Arrow = styled.div`
-  height: ${({ layer }) => layer * 30}px;
+const Riser = styled.div`
+  height: 50%;
   width: 5px;
   margin: 10px 0;
-  border-left: 1px solid white;
-  border-top: 1px solid white;
 `
 
 export default ({ point, maxYear }) => {
+  if (point.yearsFromToday > maxYear) {
+    return null
+  }
+
   return (
-    <Point location={point.location}>
-      <Arrow layer={point.layer || 1} />
+    <Info location={point.location}>
+      <Riser />
       <Title title={point.title} />
-    </Point>
+    </Info>
   )
 }

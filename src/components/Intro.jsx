@@ -35,12 +35,27 @@ const Text = styled.p`
   margin: 0;
 `
 
+const Heading = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+`
+
+const H1 = styled.h1`
+ margin: 0 5px;
+ `
+
 export default () => (
   <Intro>
     <Header>
-      <h1>
-        if a year were only a pixel.
-      </h1>
+      <Heading>
+      <H1>
+        if a year were
+      </H1>
+      <H1>
+        only a pixel.
+      </H1>
+      </Heading>
       <h3>
         a showcase of time.
       </h3>

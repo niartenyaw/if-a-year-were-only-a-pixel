@@ -5,7 +5,7 @@ csv = CSV.read("data.csv")
 
 headers = csv.first
 
-allowed_headers = %w[title category year years_ago layer]
+allowed_headers = %w[title category year years_ago type feet_from_beginning years_from_beginning]
 
 data = csv[1..-1]
 

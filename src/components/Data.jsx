@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-import Point from './Data/Point'
+import Datum from './Data/Datum'
 
 const DataContainer = styled.div`
   height: 100%;
@@ -16,6 +16,10 @@ export default class Data extends React.Component {
     this.state = {
       data: []
     }
+  }
+
+  static get pixelsPerFoot () {
+    return 1000
   }
 
   presentedData () {
@@ -42,9 +46,23 @@ export default class Data extends React.Component {
       .then(data => {
         const currentYear = (new Date(Date.now())).getYear() + 1900 // fuck javascript
         data.forEach(point => {
-          point.yearsFromToday = point.year ? (0 - (point.year - currentYear)) : point.years_ago
-          point.location = this.props.maxYear - point.yearsFromToday
+          if (point.year) {
+            point.yearsFromToday = 0 - (point.year - currentYear)
+            point.location = this.props.maxYear - point.yearsFromToday
+          } else if (point.feet_from_beginning) {
+            point.location = point.feet_from_beginning * Data.pixelsPerFoot
+            point.yearsFromToday = this.props.maxYear - point.location
+          } else if (point.years_from_beginning) {
+            point.location = point.years_from_beginning
+            point.yearsFromToday = this.props.maxYear - point.location
+          } else if (point.years_ago) {
+            point.yearsFromToday = point.years_ago
+            point.location = this.props.maxYear - point.yearsFromToday
+          } else {
+            throw new Error(`data point missing location info: ${point.title}`)
+          }
         })
+        console.log(data)
         this.setState({ data })
       })
   }
@@ -54,7 +72,7 @@ export default class Data extends React.Component {
     return (
       <DataContainer>
         {presentedData.map(point => (
-          <Point
+          <Datum
             key={point.title}
             point={point}
             maxYear={this.props.maxYear}
