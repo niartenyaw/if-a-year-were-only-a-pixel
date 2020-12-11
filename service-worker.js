@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/if-a-year-were-only-a-pixel/precache-manifest.3fa8124bfad9f026775ccc39e5b5a7fe.js"
+  "/if-a-year-were-only-a-pixel/precache-manifest.7c86c632be9c8328e7d9b7f576e635b7.js"
 );
 
 self.addEventListener('message', (event) => {
