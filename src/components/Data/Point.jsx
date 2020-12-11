@@ -1,30 +1,35 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-import Title from './Title'
-
 const Point = styled.div`
   position: absolute;
   left: ${({ location }) => location}px;
   bottom: 0px;
   display: flex;
-  flex-direction: column-reverse;
-  height: 100%;
+  align-items: flex-start;
 `
 
 const Arrow = styled.div`
-  height: ${({ layer }) => layer * 30}px;
+  height: 70px;
   width: 5px;
-  margin: 10px 0;
+  margin-right: 5px;
   border-left: 1px solid white;
   border-top: 1px solid white;
+`
+
+const Title = styled.div`
+  margin-top: -10px;
+  width: max-content;
+  max-width: 300px;
 `
 
 export default ({ point, maxYear }) => {
   return (
     <Point location={point.location}>
       <Arrow layer={point.layer || 1} />
-      <Title title={point.title} />
+      <Title>
+        {point.title}
+      </Title>
     </Point>
   )
 }

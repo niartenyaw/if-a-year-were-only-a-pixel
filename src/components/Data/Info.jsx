@@ -1,20 +1,20 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-import Title from './Title'
-
 const Info = styled.div`
   position: absolute;
   left: ${({ location }) => location}px;
-  bottom: 0px;
+  top: 10%;
   display: flex;
   flex-direction: column-reverse;
-  height: 100%;
 `
 const Riser = styled.div`
-  height: 50%;
-  width: 5px;
-  margin: 10px 0;
+  height: 100%;
+`
+
+const Title = styled.div`
+  width: max-content;
+  max-width: 300px;
 `
 
 export default ({ point, maxYear }) => {
@@ -25,7 +25,9 @@ export default ({ point, maxYear }) => {
   return (
     <Info location={point.location}>
       <Riser />
-      <Title title={point.title} />
+      <Title>
+        {point.title}
+      </Title>
     </Info>
   )
 }

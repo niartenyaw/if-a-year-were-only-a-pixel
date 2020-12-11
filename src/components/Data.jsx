@@ -59,7 +59,9 @@ export default class Data extends React.Component {
             point.yearsFromToday = point.years_ago
             point.location = this.props.maxYear - point.yearsFromToday
           } else {
-            throw new Error(`data point missing location info: ${point.title}`)
+            if (point.type !== 'hide') {
+              throw new Error(`data point missing location info: ${point.title}`)
+            }
           }
         })
         console.log(data)
