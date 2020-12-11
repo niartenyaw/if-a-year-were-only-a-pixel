@@ -1,15 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-const Arrow = styled.div`
-  height: 0;
-  width: 0;
-  margin-bottom: 20px;
-  border-bottom: 20px solid white;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-`
-
 const Counter = styled.div`
   position: fixed;
   left: ${({ innerWidth }) => innerWidth / 2}px;
@@ -20,6 +11,24 @@ const Counter = styled.div`
   justify-content: flex-end;
   align-items: center;
   width: 140px;
+  z-index: 10;
+`
+
+const Arrow = styled.div`
+  height: 0;
+  width: 0;
+  margin-bottom: 20px;
+  border-bottom: 20px solid white;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+`
+
+const TransparentBackground = styled.div`
+  position: absolute;
+  height: 150%;
+  width: 150%;
+  background-image: radial-gradient(black, transparent);
+  z-index: -1;
 `
 
 export default (props) => {
@@ -30,6 +39,7 @@ export default (props) => {
 
   return (
     <Counter innerWidth={window.innerWidth}>
+      <TransparentBackground />
       <div>
         <div>
           {formattedYear}
