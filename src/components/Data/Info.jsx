@@ -13,8 +13,8 @@ const Riser = styled.div`
 `
 
 const Title = styled.div`
-  width: max-content;
-  max-width: 300px;
+  width: 80vw;
+  max-width: 600px;
 `
 
 export default ({ point, maxYear }) => {

@@ -37,7 +37,7 @@ export default class Data extends React.Component {
   }
 
   buffer () {
-    return window.innerWidth * 0.5
+    return window.innerWidth * 10
   }
 
   componentDidMount () {
@@ -64,7 +64,6 @@ export default class Data extends React.Component {
             }
           }
         })
-        console.log(data)
         this.setState({ data })
       })
   }

@@ -17,7 +17,7 @@ const AppContainer = styled.div`
 const Scrollable = styled.div`
   display: flex;
   width: ${({ size }) => size}px;
-  padding-right: 1000px;
+  padding-right: ${({ offset }) => offset / 2}px;
 `
 
 const Timeline = styled.div`
@@ -81,7 +81,7 @@ class App extends React.Component {
   render () {
     return (
       <AppContainer ref={this.app} className='App' size={App.maxYear}>
-        <Scrollable size={App.maxYear}>
+        <Scrollable size={App.maxYear + App.offset} offset={App.offset}>
           <Intro />
           <Timeline>
             <Ruler

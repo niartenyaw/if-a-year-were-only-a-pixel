@@ -5,29 +5,30 @@ import Mark from './Ruler/Mark'
 import Counter from './Counter'
 
 const yearsPerMark = 10
+const buffer = 5
 
-const uppermostMarkPosition = (props) => (
-  Math.round((props.debouncedLocation - window.innerWidth) / yearsPerMark) * yearsPerMark
+const minLeftMarkPosition = (props) => (
+  Math.round((props.debouncedLocation - (buffer * window.innerWidth)) / yearsPerMark) * yearsPerMark
 )
 
-const firstMarkLocation = (props) => (
-  Math.max(uppermostMarkPosition(props), 0)
+const leftMarkPosition = (props) => (
+  Math.max(minLeftMarkPosition(props), 0)
 )
 
-const lowermostMarkPosition = (props) => (
-  firstMarkLocation(props) + (10 * window.innerWidth)
+const maxRightMarkPosition = (props) => (
+  props.debouncedLocation + (buffer * window.innerWidth)
 )
 
-const lastMarkLocation = (props) => (
-  Math.min(lowermostMarkPosition(props), props.maxYear)
+const rightMarkPosition = (props) => (
+  Math.min(maxRightMarkPosition(props), props.maxYear)
 )
 
 const numberOfMarks = (props) => (
-  (lastMarkLocation(props) - firstMarkLocation(props)) / yearsPerMark
+  (rightMarkPosition(props) - leftMarkPosition(props)) / yearsPerMark
 )
 
 const calculateLocation = (props, i) => (
-  Math.round(firstMarkLocation(props) + i * yearsPerMark)
+  Math.round(leftMarkPosition(props) + i * yearsPerMark)
 )
 
 const middleYear = ({ location, maxYear }) => (
@@ -37,7 +38,7 @@ const middleYear = ({ location, maxYear }) => (
 const marks = (props) => {
   const marks = []
   const numMarks = numberOfMarks(props)
-  for (let i = 0; i < numMarks; i++) {
+  for (let i = 0; i <= numMarks; i++) {
     const location = calculateLocation(props, i)
     marks.push(
       <Mark key={location} location={location} />

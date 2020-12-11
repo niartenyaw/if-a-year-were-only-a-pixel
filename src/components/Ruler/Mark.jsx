@@ -1,15 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-// const Mark = styled.div`
-//   width: 1px;
-//   height: ${({ lineLength }) => lineLength}px;
-//   background-color: red;
-//   position: absolute;
-//   left: ${({ location }) => location}px;
-//   top: 0;
-// `
-
 const Mark = styled.div.attrs(({ lineLength, location }) => ({
   style: {
     height: `${lineLength}px`,
