@@ -10,11 +10,12 @@ const Point = styled.div`
 `
 
 const Arrow = styled.div`
-  height: 70px;
   width: 5px;
+  height: ${({ layer }) => layer * 70}px;
   margin-right: 5px;
   border-left: 1px solid white;
   border-top: 1px solid white;
+  transition: height 0.5s ease-out;
 `
 
 const Title = styled.div`
@@ -23,7 +24,7 @@ const Title = styled.div`
   max-width: 300px;
 `
 
-export default ({ point, maxYear }) => {
+const component = ({ point, maxYear }) => {
   return (
     <Point location={point.location}>
       <Arrow layer={point.layer || 1} />
@@ -33,3 +34,7 @@ export default ({ point, maxYear }) => {
     </Point>
   )
 }
+
+component.maxWidth = 300
+
+export default component

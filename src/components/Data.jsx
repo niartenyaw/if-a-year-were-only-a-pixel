@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components/macro'
 
 import Datum from './Data/Datum'
+import Point from './Data/Point'
 
 const DataContainer = styled.div`
   height: 100%;
@@ -23,9 +24,25 @@ export default class Data extends React.Component {
   }
 
   presentedData () {
-    return this.state.data.filter(point => (
-      point.location > this.lowerBound() && point.location < this.upperBound()
+    const filtered = this.state.data.filter(point => (
+      point.location >= this.lowerBound() && point.location <= this.upperBound()
     ))
+
+    let layer = 1
+    for (let i = 0; i < filtered.length; i++) {
+      const el = filtered[i]
+      if (el.type === 'point' && this.inWindow(el.location)) {
+        filtered[i] = Object.assign({}, el, { layer: layer })
+        layer += 1
+      }
+    }
+
+    return filtered
+  }
+
+  inWindow (location) {
+    return location >= this.props.debouncedLocation - Point.maxWidth &&
+      location <= this.props.debouncedLocation + window.innerWidth
   }
 
   lowerBound () {
@@ -64,7 +81,8 @@ export default class Data extends React.Component {
             }
           }
         })
-        this.setState({ data })
+        const sorted = data.sort((a, b) => a.location < b.location)
+        this.setState({ data: sorted })
       })
   }
 
