@@ -32,7 +32,7 @@ const Section = styled.div`
 `
 
 const Text = styled.p`
-  margin: 0;
+  margin: 7px 0;
 `
 
 const Heading = styled.div`
@@ -43,6 +43,12 @@ const Heading = styled.div`
 
 const H1 = styled.h1`
  margin: 0 5px;
+ `
+
+ const Line = styled.div`
+  height: 20px;
+  width: 1px;
+  background-color: red;
  `
 
 export default () => (
@@ -57,17 +63,14 @@ export default () => (
       </H1>
       </Heading>
       <h3>
-        a showcase of time.
+        a showcase of evolutionary time.
       </h3>
     </Header>
     <Main>
       <Section>
-        <Text>every small mark is 10 years apart</Text>
-        <Text>medium marks are every 100 years</Text>
-        <Text>large marks are 1000</Text>
-      </Section>
-      <Section>
-        <Text>this first long red line is 6 million years ago</Text>
+        <Text>if a year were compressed to the width of this line</Text>
+        <Line />
+        <Text>what does human evolution look like?</Text>
       </Section>
     </Main>
     <Footer>

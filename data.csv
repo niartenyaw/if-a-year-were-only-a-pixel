@@ -1,52 +1,53 @@
 title,type,year,years_ago,years_from_beginning,feet_from_beginning,years_from_today_CALC,years_from_beginning_CALC,feet_from_start_CALC,feet_from_last_CALC,miles_from_start_CALC,reference
 "the last common ancestor of humans and chimpanzees, our closest living relative.",point,,6000000,,,"6,000,000.00",0.00,0.0,0.0,0.00,https://en.wikipedia.org/wiki/Chimpanzee%E2%80%93human_last_common_ancestor
-"actually, it was somewhere in the range of 10 and 6 million years ago (mya).",info,,,,1.0,"5,999,000.00","1,000.00",1.0,1.0,0.00,
-"the time range is pretty large because we don't have direct evidence of the real ""last common ancestor"" of chimps and humans, nor do we expect to find it. that would entail finding the exact bones of that particular individual, which unfortunately doesn't seem very likely.",info,,,,40.0,"5,960,000.00","40,000.00",40.0,39.0,0.01,
-"there isn't really a plethora of information about what happened a long time ago. most of it is lost to the wheel of time. as individuals die, their bodies and belongings decay and decompose. something out of the ordinary has to happen for pieces of body, including bone, to persist for so long. those fungi must be hungry!",info,,,,80.0,"5,920,000.00","80,000.00",80.0,40.0,0.02,
-but that doesn't mean archeaologists don't know what they're talking about. archeaologists and geologists have been slowly piecing together clues for hundreds of years that has included basically every scientific field and thousands of research papers.,info,,,,120.0,"5,880,000.00","120,000.00",120.0,40.0,0.02,
-"archeaologists have uncovered thousands of fossils from many different parts of the evolutionary path from many species very closely related to us. in fact, some of them very well may have been our real ancestors. it's just really hard to be that specific.",info,,,,160.0,"5,840,000.00","160,000.00",160.0,40.0,0.03,
-"for archeaologists, it's like looking at a tree while squinting. you can identify the trunk, the main branches, even a lot of the secondary and tertiary branches. yet, starting at a single leaf and tracking every single branch down to the main trunk proves to be difficult. the fine details may be a bit fuzzy, but the overall structure is pretty apparent.",info,,,,165.0,"5,835,000.00","165,000.00",165.0,5.0,0.03,
-"there wasn't a single ""ancestor"", there were actually many. a whole population. probably multiple familial groups all living in close proximity with occasional to frequent mating between them. all a part of the same species, one gene pool.",info,,,,200.0,"5,800,000.00","200,000.00",200.0,35.0,0.04,
-"somewhere between 10 and 6 mya, a part of that population stopped mating with the others. one group would eventually become current day humans over the next 6 million years. the other, into current day chimpanzees.",info,,,,240.0,"5,760,000.00","240,000.00",240.0,40.0,0.05,
-"they might have separated (consciously or not) due to any number of different causes, such as: food scarcity due to growing populations or the weather, just following game migration, or maybe a fight for power within the community. we can postulate all we want, but no one knows and we will probably never know. forever lost to time.",info,,,,280.0,"5,720,000.00","280,000.00",280.0,40.0,0.05,
-"we're lucky that recent humans have been writing stuff down that they found important for the last 6,000 years. it gives us so much more information to look back on.",info,,,,320.0,"5,680,000.00","320,000.00",320.0,40.0,0.06,
-"the human-chimp ancestors lived at least 300,000 mother-child generations ago (assuming 20 year per generation)",info,,,360000,,"5,640,000.00","360,000.00",360.0,40.0,0.07,
-that was ~230 generations you just passed since the last note. the same number of generations between you and the egyptians who built the pyramids. not quite 0.1% of those between 6 mya and now.,info,,,364650,,"5,635,350.00","364,650.00",364.7,4.6,0.07,
-evolution takes a really long time.,info,,,,400.0,"5,600,000.00","400,000.00",400.0,35.4,0.08,
-fingers getting tired?,info,,,,440.0,"5,560,000.00","440,000.00",440.0,40.0,0.08,
-congratulations! you've scrolled about 440 feet. only a mile to go until you reach current day.,info,,,,480.0,"5,520,000.00","480,000.00",480.0,40.0,0.09,
-"at this scale, recorded history (the last 6,000 years) occurs in the last 4 feet",info,,,,520.0,"5,480,000.00","520,000.00",520.0,40.0,0.10,
-"and the cretaceous–paleogene extinction event that ended the reign of the dinosaurs is 1 million miles the other direction, which would wrap around earth's equator 40 times.",info,,,,560.0,"5,440,000.00","560,000.00",560.0,40.0,0.11,
-next stop: bipedalism! (4 mya),info,,,,600.0,"5,400,000.00","600,000.00",600.0,40.0,0.11,
-earliest evidence for bipedalism,point,,4000000,,,"4,000,000.00","2,000,000.00",2000.0,1400.0,0.38,https://en.wikipedia.org/wiki/Human_skeletal_changes_due_to_bipedalism
-next stop: stone tools! (3.4 mya),info,,,,2010.0,"3,990,000.00","2,010,000.00",2010.0,10.0,0.38,
-oldest indirect evidence of stone tools (fossilised animal bones with tool marks),point,,3400000,,,"3,400,000.00","2,600,000.00",2600.0,590.0,0.49,https://en.wikipedia.org/wiki/Stone_Age#Beginning_of_the_Stone_Age
-oldest evidence of stone tools use,point,,3300000,,,"3,300,000.00","2,700,000.00",2700.0,100.0,0.51,https://en.wikipedia.org/wiki/Stone_Age#Beginning_of_the_Stone_Age
-next stop: fire! (1.8 mya),info,,,,2710.0,"3,290,000.00","2,710,000.00",2710.0,10.0,0.52,
-oldest evidence of fire control,point,,1800000,,,"1,800,000.00","4,200,000.00",4200.0,1490.0,0.80,https://en.wikipedia.org/wiki/Control_of_fire_by_early_humans
-next stop: cooking! (1 mya),info,,,,4210.0,"1,790,000.00","4,210,000.00",4210.0,10.0,0.80,
-oldest evidence of cooking food,point,,1000000,,,"1,000,000.00","5,000,000.00",5000.0,790.0,0.95,https://en.wikipedia.org/wiki/Cooking#History
-next stop: clothing! (170 kya),info,,,,5010.0,"990,000.00","5,010,000.00",5010.0,10.0,0.95,
-oldest evidence of clothing,point,,170000,,,"170,000.00","5,830,000.00",5830.0,820.0,1.11,https://en.wikipedia.org/wiki/Clothing#Origin_of_clothing
-"toba supervolcano explosion – earth's largest known eruption – human population drops as low as 3,000",point,,75000,,,"75,000.00","5,925,000.00",5925.0,95.0,1.13,
-first symbols used in cave paintings - ice age europe,point,,40000,,,"40,000.00","5,960,000.00",5960.0,35.0,1.13,https://en.wikipedia.org/wiki/Proto-writing#Neolithic_Europe
-last known neanderthals walked the earth,point,,40000,,,"40,000.00","5,960,000.00",5960.0,0.0,1.13,https://en.wikipedia.org/wiki/Neanderthal
-oldest evidence of counting (tally marks),point,,30000,,,"30,000.00","5,970,000.00",5970.0,10.0,1.13,https://en.wikipedia.org/wiki/Prehistoric_numerals#Background
-humans migrate to south pacific,point,,30000,,,"30,000.00","5,970,000.00",5970.0,0.0,1.13,
-humans migrate to northern asia,point,,25000,,,"25,000.00","5,975,000.00",5975.0,5.0,1.14,
-oldest pottery known - china,point,,18000,,,"18,000.00","5,982,000.00",5982.0,7.0,1.14,https://en.wikipedia.org/wiki/Chinese_ceramics#Early_wares
-humans cross the bering strait,point,,15000,,,"15,000.00","5,985,000.00",5985.0,3.0,1.14,
-earliest signs of humans starting sedentary lifestyle,point,,12000,,,"12,000.00","5,988,000.00",5988.0,3.0,1.14,https://en.wikipedia.org/wiki/Cradle_of_civilization#Rise_of_civilization
-humans migrate to north america,point,,12000,,,"12,000.00","5,988,000.00",5988.0,0.0,1.14,
-earliest evidence for proto-writing (visible marks communicating limited information),point,,7000,,,"7,000.00","5,993,000.00",5993.0,5.0,1.14,
-moment of creation - judaism,point,-3760,,,,"5,780.00","5,994,220.00",5994.2,1.2,1.14,
-"first urban city with full-time bureaucracy: uruk, fertile crescent",point,,4000,,,"4,000.00","5,996,000.00",5996.0,1.8,1.14,https://en.wikipedia.org/wiki/Uruk
-bronze age,point,,3300,,,"3,300.00","5,996,700.00",5996.7,0.7,1.14,
-first egyptian dynasty,point,,3150,,,"3,150.00","5,996,850.00",5996.9,0.2,1.14,
-first verified writing - cuneiform,point,,3100,,,"3,100.00","5,996,900.00",5996.9,0.0,1.14,https://en.wikipedia.org/wiki/Cuneiform#History
-iron age,point,,2500,,,"2,500.00","5,997,500.00",5997.5,0.6,1.14,
-birth of buddha,point,-480,,,,"2,500.00","5,997,500.00",5997.5,0.0,1.14,https://en.wikipedia.org/wiki/Gautama_Buddha
-birth of jesus christ,point,0,,,,"2,020.00","5,997,980.00",5998.0,0.5,1.14,
-birth of muhammed,point,570,,,,"1,450.00","5,998,550.00",5998.6,0.6,1.14,
-on the origin of species - charles darwin,point,1859,,,,161.00,"5,999,839.00",5999.8,1.3,1.14,
-today,point,2020,,,,0.00,"6,000,000.00",6000.0,0.2,1.14,
+"actually, it was somewhere in the range of 10 and 6 million years ago (mya).",info,,,,1.0,"5,998,440.00","1,560.00",1.0,1.0,0.00,
+"the time range is pretty large because we don't have direct evidence of the real ""last common ancestor"" of chimps and humans, nor do we expect to find it. that would entail finding the exact bones of that particular individual, which unfortunately doesn't seem very likely.",info,,,,40.0,"5,937,600.00","62,400.00",40.0,39.0,0.01,
+"there isn't really a plethora of information about what happened a long time ago. most of it is lost to the wheel of time. as individuals die, their bodies and belongings decay and decompose. something out of the ordinary has to happen for pieces of body, including bone, to persist for so long. those fungi must be hungry!",info,,,,80.0,"5,875,200.00","124,800.00",80.0,40.0,0.02,
+but that doesn't mean archeaologists don't know what they're talking about. archeaologists and geologists have been slowly piecing together clues for hundreds of years that has included basically every scientific field and many thousands of research papers.,info,,,,120.0,"5,812,800.00","187,200.00",120.0,40.0,0.02,
+"archeaologists have uncovered thousands of fossils from many different parts of the evolutionary path from many species very closely related to us. in fact, some of them very well may have been our real ancestors. it's just really hard to be that specific.",info,,,,160.0,"5,750,400.00","249,600.00",160.0,40.0,0.03,
+"for archeaologists, it's like looking at a tree while squinting. you can identify the trunk, the main branches, even a lot of the secondary and tertiary branches. yet, starting at a single leaf and tracking every single branch down to the main trunk proves to be difficult. the fine details may be a bit fuzzy, but the overall structure is pretty apparent.",info,,,,165.0,"5,742,600.00","257,400.00",165.0,5.0,0.03,
+"there wasn't a single ""ancestor"", there were actually many. a whole population. probably multiple familial groups all living in close proximity with occasional to frequent mating between them. all a part of the same species, one gene pool.",info,,,,200.0,"5,688,000.00","312,000.00",200.0,35.0,0.04,
+"somewhere between 10 and 6 mya, a part of that population stopped mating with the others. one group would eventually become current day humans over the next 6 million years. the other, into current day chimpanzees.",info,,,,240.0,"5,625,600.00","374,400.00",240.0,40.0,0.05,
+"they might have separated (consciously or not) due to any number of different causes, such as: food scarcity due to growing populations or a changing climate, simply following the migration of animals they hunted, or maybe there was a struggle for power within the community. we can postulate all we want, but no one knows and we will probably never know. forever lost to time.",info,,,,280.0,"5,563,200.00","436,800.00",280.0,40.0,0.05,
+"we're lucky that recent humans have been writing stuff down that they found important for the last 6,000 years. it gives us so much more information to look back on.",info,,,,320.0,"5,500,800.00","499,200.00",320.0,40.0,0.06,
+"the human-chimp ancestors lived at least 300,000 mother-child generations ago (assuming 20 year per generation)",info,,,561600,,"5,438,400.00","561,600.00",360.0,40.0,0.07,
+that was ~230 generations you just passed since the last note. the same number of generations between you and the egyptians who built the pyramids. not quite 0.1% of those between 6 mya and now.,info,,,566250,,"5,433,750.00","566,250.00",363.0,3.0,0.07,
+evolution takes a really long time.,info,,,,400.0,"5,376,000.00","624,000.00",400.0,37.0,0.08,
+fingers getting tired?,info,,,,440.0,"5,313,600.00","686,400.00",440.0,40.0,0.08,
+congratulations! you've scrolled about 480 feet. a bit over half a mile to go until you reach current day.,info,,,,480.0,"5,251,200.00","748,800.00",480.0,40.0,0.09,
+i bet they're tired now haha,info,,,,520.0,"5,188,800.00","811,200.00",520.0,40.0,0.10,
+"at this scale, recorded history (the last 6,000 years) occurs in the last 4 feet",info,,,,560.0,"5,126,400.00","873,600.00",560.0,40.0,0.11,
+"and the cretaceous–paleogene extinction event that ended the reign of the dinosaurs is 1 million miles the other direction, which would wrap around earth's equator 40 times.",info,,,,600.0,"5,064,000.00","936,000.00",600.0,40.0,0.11,
+next stop: bipedalism! (4 mya),info,,,,640.0,"5,001,600.00","998,400.00",640.0,40.0,0.12,
+earliest evidence for bipedalism,point,,4000000,,,"4,000,000.00","2,000,000.00",1282.1,642.1,0.24,https://en.wikipedia.org/wiki/Human_skeletal_changes_due_to_bipedalism
+next stop: stone tools! (3.4 mya),info,,,,1292.1,"3,984,400.00","2,015,600.00",1292.1,10.0,0.25,
+oldest indirect evidence of stone tools (fossilised animal bones with tool marks),point,,3400000,,,"3,400,000.00","2,600,000.00",1666.7,374.6,0.32,https://en.wikipedia.org/wiki/Stone_Age#Beginning_of_the_Stone_Age
+oldest evidence of stone tools use,point,,3300000,,,"3,300,000.00","2,700,000.00",1730.8,64.1,0.33,https://en.wikipedia.org/wiki/Stone_Age#Beginning_of_the_Stone_Age
+next stop: fire! (1.8 mya),info,,,,1740.8,"3,284,400.00","2,715,600.00",1740.8,10.0,0.33,
+oldest evidence of fire control,point,,1800000,,,"1,800,000.00","4,200,000.00",2692.3,951.5,0.51,https://en.wikipedia.org/wiki/Control_of_fire_by_early_humans
+next stop: cooking! (1 mya),info,,,,2702.3,"1,784,400.00","4,215,600.00",2702.3,10.0,0.51,
+oldest evidence of cooking food,point,,1000000,,,"1,000,000.00","5,000,000.00",3205.1,502.8,0.61,https://en.wikipedia.org/wiki/Cooking#History
+next stop: clothing! (170 kya),info,,,,3215.1,"984,400.00","5,015,600.00",3215.1,10.0,0.61,
+oldest evidence of clothing,point,,170000,,,"170,000.00","5,830,000.00",3737.2,522.1,0.71,https://en.wikipedia.org/wiki/Clothing#Origin_of_clothing
+"toba supervolcano explosion – earth's largest known eruption – human population drops as low as 3,000",point,,75000,,,"75,000.00","5,925,000.00",3798.1,60.9,0.72,
+first symbols used in cave paintings - ice age europe,point,,40000,,,"40,000.00","5,960,000.00",3820.5,22.4,0.73,https://en.wikipedia.org/wiki/Proto-writing#Neolithic_Europe
+last known neanderthals walked the earth,point,,40000,,,"40,000.00","5,960,000.00",3820.5,0.0,0.73,https://en.wikipedia.org/wiki/Neanderthal
+oldest evidence of counting (tally marks),point,,30000,,,"30,000.00","5,970,000.00",3826.9,6.4,0.73,https://en.wikipedia.org/wiki/Prehistoric_numerals#Background
+humans migrate to south pacific,point,,30000,,,"30,000.00","5,970,000.00",3826.9,0.0,0.73,
+humans migrate to northern asia,point,,25000,,,"25,000.00","5,975,000.00",3830.1,3.2,0.73,
+oldest pottery known - china,point,,18000,,,"18,000.00","5,982,000.00",3834.6,4.5,0.73,https://en.wikipedia.org/wiki/Chinese_ceramics#Early_wares
+humans cross the bering strait,point,,15000,,,"15,000.00","5,985,000.00",3836.5,1.9,0.73,
+earliest signs of humans starting sedentary lifestyle,point,,12000,,,"12,000.00","5,988,000.00",3838.5,1.9,0.73,https://en.wikipedia.org/wiki/Cradle_of_civilization#Rise_of_civilization
+humans migrate to north america,point,,12000,,,"12,000.00","5,988,000.00",3838.5,0.0,0.73,
+earliest evidence for proto-writing (visible marks communicating limited information),point,,7000,,,"7,000.00","5,993,000.00",3841.7,3.2,0.73,
+moment of creation - judaism,point,-3760,,,,"5,780.00","5,994,220.00",3842.4,0.8,0.73,
+"first urban city with full-time bureaucracy: uruk, fertile crescent",point,,4000,,,"4,000.00","5,996,000.00",3843.6,1.1,0.73,https://en.wikipedia.org/wiki/Uruk
+bronze age,point,,3300,,,"3,300.00","5,996,700.00",3844.0,0.4,0.73,
+first egyptian dynasty,point,,3150,,,"3,150.00","5,996,850.00",3844.1,0.1,0.73,
+first verified writing - cuneiform,point,,3100,,,"3,100.00","5,996,900.00",3844.2,0.0,0.73,https://en.wikipedia.org/wiki/Cuneiform#History
+iron age,point,,2500,,,"2,500.00","5,997,500.00",3844.6,0.4,0.73,
+birth of buddha,point,-480,,,,"2,500.00","5,997,500.00",3844.6,0.0,0.73,https://en.wikipedia.org/wiki/Gautama_Buddha
+birth of jesus christ,point,0,,,,"2,020.00","5,997,980.00",3844.9,0.3,0.73,
+birth of muhammed,point,570,,,,"1,450.00","5,998,550.00",3845.2,0.4,0.73,
+on the origin of species - charles darwin,point,1859,,,,161.00,"5,999,839.00",3846.1,0.8,0.73,
+today,point,2020,,,,0.00,"6,000,000.00",3846.2,0.1,0.73,
