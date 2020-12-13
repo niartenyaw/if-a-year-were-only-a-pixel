@@ -1,17 +1,21 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
+import { prettyYear } from '../helpers'
+
 const Counter = styled.div`
   position: fixed;
   left: ${({ innerWidth }) => innerWidth / 2}px;
   bottom: 20px;
   transform: translateX(-50%);
   display: flex;
+  opacity: ${({ display }) => display ? '1' : '0'};
   flex-direction: column-reverse;
   justify-content: flex-end;
   align-items: center;
   width: 140px;
   z-index: 10;
+  transition: opacity 0.5s ease-out;
 `
 
 const Arrow = styled.div`
@@ -33,16 +37,15 @@ const TransparentBackground = styled.div`
 
 export default (props) => {
   let { year, maxYear } = props
-  if (year > maxYear || isNaN(year)) return null
+  let display = true
+  if (year > maxYear || isNaN(year)) display = false
   if (year === 0) year += 0 // stupid negative zero
-  const formattedYear = year.toLocaleString(undefined, { minimumFrationDigits: 0 })
-
   return (
-    <Counter innerWidth={window.innerWidth}>
+    <Counter display={display} innerWidth={window.innerWidth}>
       <TransparentBackground />
       <div>
         <div>
-          {formattedYear}
+          {prettyYear(year)}
         </div>
         <div>
           years ago

@@ -2,30 +2,15 @@ import React from 'react'
 import styled from 'styled-components/macro'
 
 import Intro from './components/Intro'
-import Data from './components/Data'
-import Ruler from './components/Ruler'
+import Transcript from './components/Transcript'
+import Scrollable from './components/Scrollable'
+import Timeline from './components/Timeline'
 
 const AppContainer = styled.div`
-  width: ${({ size }) => size}px;
-  height: 100vh;
   color: white;
   background-color: black;
-  width: 100vw;
-  overflow: scroll;
-  `
-
-const Scrollable = styled.div`
-  display: flex;
   width: ${({ size }) => size}px;
-  padding-right: ${({ offset }) => offset / 2}px;
-`
-
-const Timeline = styled.div`
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column-reverse;
-`
+ `
 
 class App extends React.Component {
   static get maxYear () {
@@ -40,61 +25,67 @@ class App extends React.Component {
     super()
 
     this.state = {
-      debouncedLocation: window.innerWidth * -1, // make sure middleYear is negative at mount so Counter doesn't display
-      debounce: null
+      transcript: false,
+      data: []
     }
+  }
 
-    this.app = React.createRef()
-
-    this.handleScroll = this.handleScroll.bind(this)
+  static get pixelsPerFoot () {
+    return 1560
   }
 
   componentDidMount () {
-    this.app.current.addEventListener('scroll', this.handleScroll)
-  }
-
-  componentWillUnmount () {
-    this.app.current.removeEventListener('scroll', this.handleScroll)
-  }
-
-  handleScroll (e) {
-    // Always set location so it is up to date
-    this.setState({ location: e.target.scrollLeft - App.offset }, () => {
-      if (this.state.debounce) {
-        const now = Date.now()
-        if (now - this.state.debounce >= 200) {
-          this.setState({ debouncedLocation: this.state.location, debounce: now })
-        } else {
-          setTimeout(() => {
-            const now = Date.now()
-            if (this.state.debounce && now - this.state.debounce >= 300) {
-              this.setState({ debouncedLocation: this.state.location, debounce: null })
+    window.fetch(`${window.location}/data.json`)
+      .then(response => response.json())
+      .then(data => {
+        const currentYear = (new Date(Date.now())).getYear() + 1900 // fucking javascript
+        data.forEach(point => {
+          if (point.year) {
+            point.yearsFromToday = 0 - (parseInt(point.year) - currentYear)
+            point.location = App.maxYear - point.yearsFromToday
+          } else if (point.feet_from_beginning) {
+            point.location = parseInt(point.feet_from_beginning) * App.pixelsPerFoot
+            point.yearsFromToday = App.maxYear - point.location
+          } else if (point.years_from_beginning) {
+            point.location = parseInt(point.years_from_beginning)
+            point.yearsFromToday = App.maxYear - point.location
+          } else if (point.years_ago) {
+            point.yearsFromToday = parseInt(point.years_ago)
+            point.location = App.maxYear - point.yearsFromToday
+          } else {
+            if (point.type !== 'hide') {
+              throw new Error(`data point missing location info: ${point.title}`)
             }
-          }, 500)
-        }
-      } else {
-        this.setState({ debounce: Date.now() })
-      }
-    })
+          }
+        })
+        const sorted = data.sort((a, b) => a.location < b.location)
+        this.setState({ data: sorted })
+      })
+  }
+
+  toTranscript () {
+    this.setState({ transcript: true })
+  }
+
+  toTimeline () {
+    this.setState({ transcript: false })
   }
 
   render () {
+    if (this.state.transcript) {
+      return (
+        <AppContainer size={window.innerWidth}>
+          <Transcript data={this.state.data} toTimeline={this.toTimeline.bind(this)} />
+        </AppContainer>
+      )
+    }
+
+    // TODO: fix CSS so don't have to pass size into both
     return (
-      <AppContainer ref={this.app} className='App' size={App.maxYear}>
+      <AppContainer size={App.maxYear + App.offset}>
         <Scrollable size={App.maxYear + App.offset} offset={App.offset}>
-          <Intro />
-          <Timeline>
-            <Ruler
-              debouncedLocation={this.state.debouncedLocation}
-              location={this.state.location}
-              offset={App.offset}
-              maxYear={App.maxYear}
-            />
-            <Data
-              debouncedLocation={this.state.debouncedLocation}
-              maxYear={App.maxYear}
-            />
-          </Timeline>
+          <Intro offset={App.offset} toTranscript={this.toTranscript.bind(this)} />
+          <Timeline data={this.state.data} maxYear={App.maxYear} offset={App.offset} />
         </Scrollable>
       </AppContainer>
     )

@@ -68,6 +68,7 @@ const Ruler = styled.div`
 `
 
 export default (props) => {
+  console.log(props.maxYear, props.location)
   return (
     <Ruler>
       <CounterContainer>

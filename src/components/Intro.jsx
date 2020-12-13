@@ -1,12 +1,15 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
+import Text from './Text'
+
 const Intro = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-shrink: 0;
 `
 
 const Header = styled.div`
@@ -22,17 +25,17 @@ const Main = styled.div`
   align-items: center;
 `
 
-const Footer = styled.div``
+const Footer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 
 const Section = styled.div`
   margin: 10px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-`
-
-const Text = styled.p`
-  margin: 7px 0;
 `
 
 const Heading = styled.div`
@@ -51,8 +54,19 @@ const H1 = styled.h1`
   background-color: red;
  `
 
-export default () => (
-  <Intro>
+const ToTranscript = styled.div`
+  display: inline-block;
+  border: 1px solid white;
+  border-radius: 6px;
+  padding: 3px 11px;
+  margin-top: 9px;
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+export default ({ toTranscript, offset }) => (
+  <Intro size={offset}>
     <Header>
       <Heading>
       <H1>
@@ -77,7 +91,12 @@ export default () => (
       <Text>
         scroll right to explore --->
       </Text>
+      <Text>
+        or
+      </Text>
+      <ToTranscript onClick={toTranscript}>
+        <Text>read the transcript (boring)</Text>
+      </ToTranscript>
     </Footer>
   </Intro>
-
 )
