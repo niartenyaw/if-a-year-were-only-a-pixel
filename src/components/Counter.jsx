@@ -7,14 +7,18 @@ const Counter = styled.div`
   position: fixed;
   left: ${({ innerWidth }) => innerWidth / 2}px;
   bottom: 20px;
+
+  width: 140px;
   transform: translateX(-50%);
+
   display: flex;
-  opacity: ${({ display }) => display ? '1' : '0'};
   flex-direction: column-reverse;
   justify-content: flex-end;
   align-items: center;
-  width: 140px;
+
   z-index: 10;
+
+  opacity: ${({ display }) => display ? '1' : '0'};
   transition: opacity 0.5s ease-out;
 `
 
@@ -51,7 +55,7 @@ export default (props) => {
           years ago
         </div>
       </div>
-      <Arrow layer='1' />
+      <Arrow />
     </Counter>
   )
 }

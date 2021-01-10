@@ -6,11 +6,17 @@ import Transcript from './components/Transcript'
 import Scrollable from './components/Scrollable'
 import Timeline from './components/Timeline'
 
-const AppContainer = styled.div`
+const AppBase = styled.div`
   color: white;
   background-color: black;
+`
+
+const AppTimeline = styled(AppBase)`
   width: ${({ size }) => size}px;
- `
+`
+const AppTranscript = styled(AppBase)`
+  width: ${({ size }) => size}px;
+`
 
 class App extends React.Component {
   static get maxYear () {
@@ -74,20 +80,20 @@ class App extends React.Component {
   render () {
     if (this.state.transcript) {
       return (
-        <AppContainer size={window.innerWidth}>
+        <AppTranscript size={window.innerWidth}>
           <Transcript data={this.state.data} toTimeline={this.toTimeline.bind(this)} />
-        </AppContainer>
+        </AppTranscript>
       )
     }
 
     // TODO: fix CSS so don't have to pass size into both
     return (
-      <AppContainer size={App.maxYear + App.offset}>
+      <AppTimeline size={App.maxYear + App.offset}>
         <Scrollable size={App.maxYear + App.offset} offset={App.offset}>
           <Intro offset={App.offset} toTranscript={this.toTranscript.bind(this)} />
           <Timeline data={this.state.data} maxYear={App.maxYear} offset={App.offset} />
         </Scrollable>
-      </AppContainer>
+      </AppTimeline>
     )
   }
 }
