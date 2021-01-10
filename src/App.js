@@ -11,13 +11,6 @@ const AppBase = styled.div`
   background-color: black;
 `
 
-const AppTimeline = styled(AppBase)`
-  width: ${({ size }) => size}px;
-`
-const AppTranscript = styled(AppBase)`
-  width: ${({ size }) => size}px;
-`
-
 class App extends React.Component {
   static get maxYear () {
     return 6000000
@@ -78,22 +71,14 @@ class App extends React.Component {
   }
 
   render () {
-    if (this.state.transcript) {
-      return (
-        <AppTranscript size={window.innerWidth}>
-          <Transcript data={this.state.data} toTimeline={this.toTimeline.bind(this)} />
-        </AppTranscript>
-      )
-    }
-
     // TODO: fix CSS so don't have to pass size into both
     return (
-      <AppTimeline size={App.maxYear + App.offset}>
+      <AppBase size={App.maxYear + App.offset}>
         <Scrollable size={App.maxYear + App.offset} offset={App.offset}>
           <Intro offset={App.offset} toTranscript={this.toTranscript.bind(this)} />
           <Timeline data={this.state.data} maxYear={App.maxYear} offset={App.offset} />
         </Scrollable>
-      </AppTimeline>
+      </AppBase>
     )
   }
 }
