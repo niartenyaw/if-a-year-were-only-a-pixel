@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "412b22d0709673168577bce0df6dcdbd",
+    "revision": "49b0c8cc96de7be81778106a96dc656a",
     "url": "/if-a-year-were-only-a-pixel/index.html"
   },
   {
-    "revision": "9d20d87fb27969fd2da9",
+    "revision": "db28a0b8e04d25c88eb8",
     "url": "/if-a-year-were-only-a-pixel/static/css/main.3b26859d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/if-a-year-were-only-a-pixel/static/js/2.753c42f9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9d20d87fb27969fd2da9",
-    "url": "/if-a-year-were-only-a-pixel/static/js/main.619e5801.chunk.js"
+    "revision": "db28a0b8e04d25c88eb8",
+    "url": "/if-a-year-were-only-a-pixel/static/js/main.aec1cf12.chunk.js"
   },
   {
     "revision": "536afffbe0989e41e3d3",
