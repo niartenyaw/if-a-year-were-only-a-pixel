@@ -25,12 +25,6 @@ const Main = styled.div`
   align-items: center;
 `
 
-const Footer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
 const Section = styled.div`
   margin: 10px 0;
   display: flex;
@@ -54,16 +48,33 @@ const H1 = styled.h1`
   background-color: red;
  `
 
-const ToTranscript = styled.div`
-  display: inline-block;
-  border: 1px solid white;
-  border-radius: 6px;
-  padding: 3px 11px;
-  margin-top: 9px;
-  &:hover {
-    cursor: pointer;
-  }
+const Footer = styled.div`
+  display: flex;
+  align-items: center;
 `
+
+const Github = styled.div`
+  margin-right: 10px;
+`
+
+const A = styled.a`
+  text-decoration: none;
+  color: white;
+`
+
+const Img = styled.img`
+  height: 30px;
+  width: auto;
+`
+
+const Inspiration = styled.div`
+  margin-bottom: 6px;
+`
+
+const InspirationText = styled.div`
+  border-bottom: 1px solid white;
+`
+
 
 export default ({ toTranscript, offset }) => (
   <Intro size={offset}>
@@ -86,17 +97,23 @@ export default ({ toTranscript, offset }) => (
         <Line />
         <Text>what does human evolution look like?</Text>
       </Section>
+      <Section>
+        <Text>
+          scroll right to explore --->
+        </Text>
+      </Section>
     </Main>
     <Footer>
-      <Text>
-        scroll right to explore --->
-      </Text>
-      <Text>
-        or
-      </Text>
-      <ToTranscript onClick={toTranscript}>
-        <Text>read the transcript (boring)</Text>
-      </ToTranscript>
+      <Github>
+        <A href="https://github.com/niartenyaw/if-a-year-were-only-a-pixel">
+          <Img src="/if-a-year-were-only-a-pixel/github.png" />
+        </A>
+      </Github>
+      <Inspiration>
+        <A href="https://www.joshworth.com/dev/pixelspace/pixelspace_solarsystem.html">
+          <InspirationText>inspiration</InspirationText>
+        </A>
+      </Inspiration>
     </Footer>
   </Intro>
 )
