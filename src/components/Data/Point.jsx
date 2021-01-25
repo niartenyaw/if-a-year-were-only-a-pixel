@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import { withTheme } from 'styled-components'
 
 const Point = styled.div`
   position: absolute;
@@ -9,14 +10,14 @@ const Point = styled.div`
   align-items: flex-start;
 `
 
-const Arrow = styled.div`
+const Arrow = withTheme(styled.div`
   width: 5px;
   height: ${({ layer }) => layer * 70}px;
   margin-right: 5px;
-  border-left: 1px solid white;
-  border-top: 1px solid white;
+  border-left: 1px solid ${({ theme }) => theme.colors.text};
+  border-top: 1px solid ${({ theme }) => theme.colors.text};
   transition: height 0.5s ease-out;
-`
+`)
 
 const Title = styled.div`
   margin-top: -10px;

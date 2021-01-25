@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import { withTheme } from 'styled-components'
 
 import Text from './Text'
 
@@ -42,11 +43,11 @@ const H1 = styled.h1`
  margin: 0 5px;
  `
 
- const Line = styled.div`
+const Line = withTheme(styled.div`
   height: 20px;
   width: 1px;
-  background-color: red;
- `
+  background-color: ${({ theme }) => theme.colors.primary};
+ `)
 
 const Footer = styled.div`
   display: flex;
@@ -54,13 +55,13 @@ const Footer = styled.div`
 `
 
 const Github = styled.div`
-  margin-right: 10px;
+  margin-bottom: -4px;
 `
 
-const A = styled.a`
+const A = withTheme(styled.a`
   text-decoration: none;
-  color: white;
-`
+  color: ${({ theme }) => theme.colors.text};
+`)
 
 const Img = styled.img`
   height: 30px;
@@ -71,21 +72,28 @@ const Inspiration = styled.div`
   margin-bottom: 6px;
 `
 
-const InspirationText = styled.div`
-  border-bottom: 1px solid white;
+const InspirationText = withTheme(styled.div`
+  border-bottom: 1px solid ${({ theme }) => theme.colors.text};
+  margin-bottom: -5px;
+`)
+
+const Separator = styled.div`
+  :before {
+    content: "|";
+    margin: 0 10px;
+  }
 `
 
-
-export default ({ toTranscript, offset }) => (
+export default ({ offset }) => (
   <Intro size={offset}>
     <Header>
       <Heading>
-      <H1>
-        if a year were
-      </H1>
-      <H1>
-        only a pixel.
-      </H1>
+        <H1>
+          if a year were
+        </H1>
+        <H1>
+          only a pixel.
+        </H1>
       </Heading>
       <h3>
         a showcase of evolutionary time.
@@ -95,22 +103,23 @@ export default ({ toTranscript, offset }) => (
       <Section>
         <Text>if a year were compressed to the width of this line</Text>
         <Line />
-        <Text>what does human evolution look like?</Text>
+        <Text>what does the scale of human evolution look like?</Text>
       </Section>
       <Section>
         <Text>
-          scroll right to explore --->
+          scroll right to explore ---&gt;
         </Text>
       </Section>
     </Main>
     <Footer>
       <Github>
-        <A href="https://github.com/niartenyaw/if-a-year-were-only-a-pixel">
-          <Img src="/if-a-year-were-only-a-pixel/github.png" />
+        <A href='https://github.com/niartenyaw/if-a-year-were-only-a-pixel'>
+          <Img src='/if-a-year-were-only-a-pixel/github.png' />
         </A>
       </Github>
+      <Separator />
       <Inspiration>
-        <A href="https://www.joshworth.com/dev/pixelspace/pixelspace_solarsystem.html">
+        <A href='https://www.joshworth.com/dev/pixelspace/pixelspace_solarsystem.html'>
           <InspirationText>inspiration</InspirationText>
         </A>
       </Inspiration>

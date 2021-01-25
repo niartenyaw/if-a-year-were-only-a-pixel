@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import { withTheme } from 'styled-components'
 
 import Mark from './Ruler/Mark'
 import Counter from './Counter'
@@ -59,16 +60,15 @@ const MarksContainer = styled.div`
   position: relative;
 `
 
-const Ruler = styled.div`
+const Ruler = withTheme(styled.div`
   height: 150px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  border-top: 1px solid red;
-`
+  border-top: 1px solid ${({ theme }) => theme.colors.primary};
+`)
 
 export default (props) => {
-  console.log(props.maxYear, props.location)
   return (
     <Ruler>
       <CounterContainer>

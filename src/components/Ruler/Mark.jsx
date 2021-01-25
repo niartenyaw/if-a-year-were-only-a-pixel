@@ -1,17 +1,18 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import { withTheme } from 'styled-components'
 
-const Mark = styled.div.attrs(({ lineLength, location }) => ({
+const Mark = withTheme(styled.div.attrs(({ lineLength, location }) => ({
   style: {
     height: `${lineLength}px`,
     left: `${location}px`
   }
 }))`
   width: 1px;
-  background-color: red;
+  background-color: ${({ theme }) => theme.colors.primary};
   position: absolute;
   top: 0;
-`
+`)
 
 export default ({ markingLocation, location }) => {
   let lineLength = 10

@@ -1,15 +1,17 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
+import { ThemeProvider, withTheme } from 'styled-components'
+import theme from './theme'
+
 import Intro from './components/Intro'
-import Transcript from './components/Transcript'
 import Scrollable from './components/Scrollable'
 import Timeline from './components/Timeline'
 
-const AppBase = styled.div`
-  color: white;
-  background-color: black;
-`
+const AppBase = withTheme(styled.div`
+  color: ${({ theme }) => theme.colors.text};
+  background-color: ${({ theme }) => theme.colors.background};
+`)
 
 class App extends React.Component {
   static get maxYear () {
@@ -24,7 +26,6 @@ class App extends React.Component {
     super()
 
     this.state = {
-      transcript: false,
       data: []
     }
   }
@@ -62,23 +63,17 @@ class App extends React.Component {
       })
   }
 
-  toTranscript () {
-    this.setState({ transcript: true })
-  }
-
-  toTimeline () {
-    this.setState({ transcript: false })
-  }
-
   render () {
     // TODO: fix CSS so don't have to pass size into both
     return (
-      <AppBase size={App.maxYear + App.offset}>
-        <Scrollable size={App.maxYear + App.offset} offset={App.offset}>
-          <Intro offset={App.offset} toTranscript={this.toTranscript.bind(this)} />
-          <Timeline data={this.state.data} maxYear={App.maxYear} offset={App.offset} />
-        </Scrollable>
-      </AppBase>
+      <ThemeProvider theme={theme}>
+        <AppBase size={App.maxYear + App.offset}>
+          <Scrollable size={App.maxYear + App.offset} offset={App.offset}>
+            <Intro key='intro' offset={App.offset} />
+            <Timeline key='timeline' data={this.state.data} maxYear={App.maxYear} offset={App.offset} />
+          </Scrollable>
+        </AppBase>
+      </ThemeProvider>
     )
   }
 }
