@@ -2,4 +2,4 @@
 
 ## Color Palette
 
-https://paletton.com/#uid=30D0X0ki-llagUDdkvXmLcPrM3h
+https://paletton.com/#uid=b0D4o2w0kiMlz2LJyaJvllPcvmc2z
